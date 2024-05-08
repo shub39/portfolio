@@ -25,19 +25,19 @@ class SitePalette(
 
 object SitePalettes {
     val light = SitePalette(
-        nearBackground = Color.rgb(0xF4F6FA),
+        nearBackground = Color.rgb(0xEBDBB2),
         cobweb = Colors.LightGray,
         brand = SitePalette.Brand(
-            primary = Color.rgb(0x3C83EF),
-            accent = Color.rgb(0xFCBA03),
+            primary = Color.rgb(0x282828),
+            accent = Color.rgb(0xD79921),
         )
     )
     val dark = SitePalette(
-        nearBackground = Color.rgb(0x13171F),
+        nearBackground = Color.rgb(0x282828),
         cobweb = Colors.LightGray.inverted(),
         brand = SitePalette.Brand(
-            primary = Color.rgb(0x3C83EF),
-            accent = Color.rgb(0xF3DB5B),
+            primary = Color.rgb(0xEBDBB2),
+            accent = Color.rgb(0xD79921),
         )
     )
 }
@@ -51,8 +51,8 @@ fun ColorMode.toSitePalette(): SitePalette {
 
 @InitSilk
 fun initTheme(ctx: InitSilkContext) {
-    ctx.theme.palettes.light.background = Color.rgb(0xFAFAFA)
-    ctx.theme.palettes.light.color = Colors.Black
-    ctx.theme.palettes.dark.background = Color.rgb(0x06080B)
-    ctx.theme.palettes.dark.color = Colors.White
+    ctx.theme.palettes.light.background = Color.rgb(0xEBDBB2)
+    ctx.theme.palettes.light.color = Color.rgb(0x282828)
+    ctx.theme.palettes.dark.background = Color.rgb(0x282828)
+    ctx.theme.palettes.dark.color = Color.rgb(0xEBDBB2)
 }

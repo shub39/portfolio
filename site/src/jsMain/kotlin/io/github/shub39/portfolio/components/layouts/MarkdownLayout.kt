@@ -25,6 +25,7 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("h1") {
         Modifier
+            .fontFamily("JetBrains Mono")
             .fontSize(3.cssRem)
             .fontWeight(400)
             .margin(bottom = 2.5.cssRem)
@@ -33,6 +34,7 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("h2") {
         Modifier
+            .fontFamily("JetBrains Mono")
             .fontSize(3.cssRem)
             .fontWeight(300)
             .margin(topBottom = 2.cssRem)
@@ -40,6 +42,7 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("h3") {
         Modifier
+            .fontFamily("JetBrains Mono")
             .fontSize(2.4.cssRem)
             .fontWeight(300)
             .margin(topBottom = 1.5.cssRem)
@@ -47,6 +50,7 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("h4") {
         Modifier
+            .fontFamily("JetBrains Mono")
             .fontSize(1.2.cssRem)
             .fontWeight(FontWeight.Bolder)
             .margin(top = 1.cssRem, bottom = 0.5.cssRem)
@@ -57,7 +61,7 @@ val MarkdownStyle by ComponentStyle {
     }
 
     cssRule("ul") {
-        Modifier.fillMaxWidth().overflowWrap(OverflowWrap.BreakWord)
+        Modifier.fontFamily("JetBrains Mono").fillMaxWidth().overflowWrap(OverflowWrap.BreakWord)
     }
 
     cssRule("li,ol,ul") {
@@ -66,6 +70,7 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("code") {
         Modifier
+            .fontFamily("JetBrains Mono")
             .color(colorMode.toPalette().color.toRgb().copyf(alpha = 0.8f))
             .fontWeight(FontWeight.Bolder)
     }

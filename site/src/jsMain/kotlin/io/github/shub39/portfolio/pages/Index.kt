@@ -1,10 +1,12 @@
 package io.github.shub39.portfolio.pages
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.StyleVariable
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
+import com.varabyte.kobweb.compose.foundation.layout.Spacer
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
@@ -15,11 +17,13 @@ import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.base
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toAttrs
 import com.varabyte.kobweb.silk.components.style.toModifier
+import com.varabyte.kobweb.silk.components.style.vars.color.ColorVar
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.ColorSchemes
@@ -74,56 +78,46 @@ fun HomePage() {
                 Column(Modifier.gap(2.cssRem)) {
                     Div(HeadlineTextStyle.toAttrs()) {
                         SpanText(
-                            "Use this template as your starting point for ", Modifier.color(
+                            "Hello! ", Modifier.fontFamily("JetBrains Mono").color(
                                 when (ColorMode.current) {
-                                    ColorMode.LIGHT -> Colors.Black
-                                    ColorMode.DARK -> Colors.White
+                                    ColorMode.LIGHT -> Color.rgb(0x282828)
+                                    ColorMode.DARK -> Color.rgb(0xEBDBB2)
                                 }
                             )
                         )
+                        Spacer()
                         SpanText(
-                            "Kobweb",
-                            Modifier
-                                .color(sitePalette.brand.accent)
-                                // Use a shadow so this light-colored word is more visible in light mode
-                                .textShadow(0.px, 0.px, blurRadius = 0.5.cssRem, color = Colors.Gray)
+                            "I am Shubham Gorai", Modifier.fontFamily("JetBrains Mono").color(
+                                when (ColorMode.current) {
+                                    ColorMode.LIGHT -> Color.rgb(0x282828)
+                                    ColorMode.DARK -> Color.rgb(0xEBDBB2)
+                                }
+                            )
+                        )
+                        Spacer()
+                        SpanText(
+                            "Aspiring Android Developer from India", Modifier.fontSize(fontSize = FontSize.Large).fontFamily("JetBrains Mono").color(
+                                when (ColorMode.current) {
+                                    ColorMode.LIGHT -> Color.rgb(0x282828)
+                                    ColorMode.DARK -> Color.rgb(0xEBDBB2)
+                                }
+                            )
+                        )
+                        Spacer()
+                        Link(
+                            "https://www.github.com/shub39/",
+                            "Github  ",
+                            Modifier.fontSize(FontSize.Large).fontFamily("JetBrains Mono").setVariable(ColorVar, sitePalette.brand.primary),
+                            variant = UncoloredLinkVariant
+                            )
+                        Link(
+                            "https://www.linkedin.com/in/shub39/",
+                            "LinkedIn  ",
+                            Modifier.fontSize(FontSize.Large).fontFamily("JetBrains Mono").setVariable(ColorVar, sitePalette.brand.primary),
+                            variant = UncoloredLinkVariant
                         )
                     }
-
-                    Div(SubheadlineTextStyle.toAttrs()) {
-                        SpanText("You can read the ")
-                        Link("/about", "About")
-                        SpanText(" page for more information.")
-                    }
-
-                    val ctx = rememberPageContext()
-                    Button(onClick = {
-                        // Change this click handler with your call-to-action behavior
-                        // here. Link to an order page? Open a calendar UI? Play a movie?
-                        // Up to you!
-                        ctx.router.tryRoutingTo("/about")
-                    }, colorScheme = ColorSchemes.Blue) {
-                        Text("This could be your CTA")
-                    }
                 }
-            }
-
-            Div(HomeGridStyle
-                .toModifier()
-                .displayIfAtLeast(Breakpoint.MD)
-                .grid {
-                    rows { repeat(3) { size(1.fr) } }
-                    columns { repeat(5) {size(1.fr) } }
-                }
-                .toAttrs()
-            ) {
-                val sitePalette = ColorMode.current.toSitePalette()
-                GridCell(sitePalette.brand.primary, 1, 1, 2, 2)
-                GridCell(ColorSchemes.Monochrome._600, 1, 3)
-                GridCell(ColorSchemes.Monochrome._100, 1, 4, width = 2)
-                GridCell(sitePalette.brand.accent, 2, 3, width = 2)
-                GridCell(ColorSchemes.Monochrome._300, 2, 5)
-                GridCell(ColorSchemes.Monochrome._800, 3, 1, width = 5)
             }
         }
     }

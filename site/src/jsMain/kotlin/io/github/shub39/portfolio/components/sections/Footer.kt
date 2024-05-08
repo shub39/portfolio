@@ -35,7 +35,7 @@ fun Footer(modifier: Modifier = Modifier) {
             SpanText("Built with ")
             Link(
                 "https://github.com/varabyte/kobweb",
-                "Kobweb",
+                "G",
                 Modifier.setVariable(ColorVar, sitePalette.brand.primary),
                 variant = UncoloredLinkVariant
             )

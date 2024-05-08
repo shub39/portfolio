@@ -80,7 +80,7 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
             .gridTemplateRows { size(1.fr); size(minContent) },
         contentAlignment = Alignment.Center
     ) {
-        SvgCobweb(Modifier.gridRow(1).align(Alignment.TopStart))
+
         Column(
             // Isolate the content, because otherwise the absolute-positioned SVG above will render on top of it.
             // This is confusing but how browsers work. Read up on stacking contexts for more info.
@@ -99,6 +99,5 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
             }
         }
         // Associate the footer with the row that will get pushed off the bottom of the page if it can't fit.
-        Footer(Modifier.fillMaxWidth().gridRow(2))
     }
 }

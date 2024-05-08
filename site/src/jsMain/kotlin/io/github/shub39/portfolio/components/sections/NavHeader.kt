@@ -36,7 +36,7 @@ import io.github.shub39.portfolio.components.widgets.IconButton
 import io.github.shub39.portfolio.toSitePalette
 
 val NavHeaderStyle by ComponentStyle.base {
-    Modifier.fillMaxWidth().padding(1.cssRem)
+    Modifier.fontFamily("JetBrains Mono").fillMaxWidth().padding(1.cssRem)
 }
 
 @Composable
@@ -100,10 +100,7 @@ enum class SideMenuState {
 @Composable
 fun NavHeader() {
     Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
-        Link("https://kobweb.varabyte.com") {
-            // Block display overrides inline display of the <img> tag, so it calculates centering better
-            Image("/kobweb-logo.png", "Kobweb Logo", Modifier.height(2.cssRem).display(DisplayStyle.Block))
-        }
+
 
         Spacer()
 
