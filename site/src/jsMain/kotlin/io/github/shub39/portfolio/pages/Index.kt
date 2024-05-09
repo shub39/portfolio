@@ -2,6 +2,7 @@ package io.github.shub39.portfolio.pages
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontSize
+import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.StyleVariable
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -27,6 +28,7 @@ import io.github.shub39.portfolio.HeadlineTextStyle
 import io.github.shub39.portfolio.components.layouts.PageLayout
 import io.github.shub39.portfolio.components.sections.Footer
 import io.github.shub39.portfolio.components.widgets.LinkButton
+import io.github.shub39.portfolio.components.widgets.ThemedButton
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
@@ -60,45 +62,48 @@ fun HomePage() {
     PageLayout("Home") {
         Row(HeroContainerStyle.toModifier()) {
             Box {
-                Column(Modifier.gap(2.cssRem)) {
-                    Div(HeadlineTextStyle.toAttrs()) {
-                        SpanText(
-                            "Hello!", Modifier.fontWeight(800).fontSize(FontSize.Larger).color(
-                                when (ColorMode.current) {
-                                    ColorMode.LIGHT -> Color.rgb(0x282828)
-                                    ColorMode.DARK -> Color.rgb(0xEBDBB2)
-                                }
+                Column(Modifier.gap(2.cssRem)){
+                    Column(Modifier.gap(1.cssRem)){
+                        Div(HeadlineTextStyle.toAttrs()) {
+                            SpanText(
+                                "Hello! \uD83D\uDC4B", Modifier.fontWeight(600).fontSize(FontSize.Larger).color(
+                                    when (ColorMode.current) {
+                                        ColorMode.LIGHT -> Color.rgb(0x282828)
+                                        ColorMode.DARK -> Color.rgb(0xEBDBB2)
+                                    }
+                                )
                             )
-                        )
-                        Spacer()
-                        SpanText(
-                            "I am Shubham Gorai", Modifier.fontWeight(400).fontSize(FontSize.Larger).color(
-                                when (ColorMode.current) {
-                                    ColorMode.LIGHT -> Color.rgb(0x282828)
-                                    ColorMode.DARK -> Color.rgb(0xEBDBB2)
-                                }
-                            )
-                        )
-                        Spacer()
-                        SpanText(
-                            "Aspiring Android Developer from India", Modifier.fontWeight(400).fontSize(1.5.cssRem).color(
-                                when (ColorMode.current) {
-                                    ColorMode.LIGHT -> Color.rgb(0x282828)
-                                    ColorMode.DARK -> Color.rgb(0xEBDBB2)
-                                }
-                            )
-                        )
-                        Spacer()
-                        Div (HeadlineTextStyle.toAttrs()){
-                            LinkButton("https://www.github.com/shub39", Modifier.margin(right = 8.px)){
-                                FaGithub()
+                            Spacer()
+                            Column(Modifier.gap(0.cssRem)){
+                                SpanText(
+                                    "I am Shubham Gorai", Modifier.fontWeight(400).fontSize(2.cssRem).color(
+                                        when (ColorMode.current) {
+                                            ColorMode.LIGHT -> Color.rgb(0x282828)
+                                            ColorMode.DARK -> Color.rgb(0xEBDBB2)
+                                        }
+                                    )
+                                )
+                                Spacer()
+                                SpanText(
+                                    "Aspiring Android Developer", Modifier.fontStyle(FontStyle.Italic).fontWeight(500).fontSize(1.8.cssRem).color(
+                                        when (ColorMode.current) {
+                                            ColorMode.LIGHT -> Color.rgb(0x282828)
+                                            ColorMode.DARK -> Color.rgb(0xEBDBB2)
+                                        }
+                                    )
+                                )
                             }
-                            LinkButton("https://www.linkedin.com/in/shub39/", Modifier.margin(8.px)){
-                                FaLinkedin()
-                            }
-                            LinkButton("https://www.youtube.com/channel/UCCp8mT5pZcySIvhDOZPYDmw", Modifier.margin(8.px)){
-                                FaYoutube()
-                            }
+                        }
+                    }
+                    Div (HeadlineTextStyle.toAttrs()){
+                        LinkButton("https://www.github.com/shub39", Modifier.margin(right = 8.px)){
+                            FaGithub()
+                        }
+                        LinkButton("https://www.linkedin.com/in/shub39/", Modifier.margin(8.px)){
+                            FaLinkedin()
+                        }
+                        LinkButton("https://www.youtube.com/channel/UCCp8mT5pZcySIvhDOZPYDmw", Modifier.margin(8.px)){
+                            FaYoutube()
                         }
                     }
                 }

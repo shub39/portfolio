@@ -9,7 +9,6 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.cssRule
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
@@ -17,35 +16,32 @@ import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
 
 val MarkdownStyle by ComponentStyle {
-    // The following rules apply to all descendant elements, indicated by the leading space.
-    // When you use `cssRule`, the name of this style is prefixed in front of it.
-    // See also: https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator
 
     cssRule("h1") {
         Modifier
-            .fontSize(3.cssRem)
+            .fontSize(2.cssRem)
             .fontWeight(800)
             .margin(bottom = 2.5.cssRem)
-            .lineHeight(1.2) //1.5x doesn't look as good on very large text
+            .lineHeight(1.2)
     }
 
     cssRule("h2") {
         Modifier
-            .fontSize(2.5.cssRem)
+            .fontSize(1.5.cssRem)
             .fontWeight(700)
             .margin(topBottom = 2.cssRem)
     }
 
     cssRule("h3") {
         Modifier
-            .fontSize(2.cssRem)
+            .fontSize(1.cssRem)
             .fontWeight(700)
             .margin(topBottom = 1.5.cssRem)
     }
 
     cssRule("h4") {
         Modifier
-            .fontSize(1.2.cssRem)
+            .fontSize(1.cssRem)
             .fontWeight(FontWeight.Bolder)
             .margin(top = 1.cssRem, bottom = 0.5.cssRem)
     }
@@ -53,7 +49,7 @@ val MarkdownStyle by ComponentStyle {
     cssRule("p") {
         Modifier
             .margin(bottom = 0.8.cssRem)
-            .fontSize(1.7.cssRem)
+            .fontSize(1.2.cssRem)
     }
 
     cssRule("ul") {

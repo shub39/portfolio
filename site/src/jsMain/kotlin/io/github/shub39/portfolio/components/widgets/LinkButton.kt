@@ -109,3 +109,4 @@ fun LinkButton(
     val ctx = rememberPageContext()
     ThemedButton(onClick = { ctx.router.navigateTo(path) }, modifier, text, shape, primary, content)
 }
+
