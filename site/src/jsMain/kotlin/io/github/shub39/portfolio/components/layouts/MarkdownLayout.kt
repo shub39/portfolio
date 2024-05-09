@@ -9,6 +9,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
+import com.varabyte.kobweb.silk.components.style.cssRule
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
@@ -56,8 +57,14 @@ val MarkdownStyle by ComponentStyle {
             .margin(top = 1.cssRem, bottom = 0.5.cssRem)
     }
 
+    cssRule("a") {
+        Modifier
+            .fontFamily("JetBrains Mono")
+    }
     cssRule("p") {
-        Modifier.margin(bottom = 0.8.cssRem)
+        Modifier
+            .fontFamily("JetBrains Mono")
+            .margin(bottom = 0.8.cssRem)
     }
 
     cssRule("ul") {

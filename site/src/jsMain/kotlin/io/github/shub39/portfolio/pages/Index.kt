@@ -3,19 +3,14 @@ package io.github.shub39.portfolio.pages
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.StyleVariable
-import com.varabyte.kobweb.compose.foundation.layout.Box
-import com.varabyte.kobweb.compose.foundation.layout.Column
-import com.varabyte.kobweb.compose.foundation.layout.Row
-import com.varabyte.kobweb.compose.foundation.layout.Spacer
+import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Color
-import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
-import com.varabyte.kobweb.core.rememberPageContext
-import com.varabyte.kobweb.silk.components.forms.Button
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIfAtLeast
+import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
+import com.varabyte.kobweb.silk.components.icons.fa.FaLinkedin
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -26,14 +21,12 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.style.vars.color.ColorVar
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import com.varabyte.kobweb.silk.theme.colors.ColorSchemes
+import io.github.shub39.portfolio.HeadlineTextStyle
+import io.github.shub39.portfolio.components.layouts.PageLayout
+import io.github.shub39.portfolio.components.widgets.LinkButton
+import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Text
-import io.github.shub39.portfolio.HeadlineTextStyle
-import io.github.shub39.portfolio.SubheadlineTextStyle
-import io.github.shub39.portfolio.components.layouts.PageLayout
-import io.github.shub39.portfolio.toSitePalette
 
 // Container that has a tagline and grid on desktop, and just the tagline on mobile
 val HeroContainerStyle by ComponentStyle {
@@ -78,7 +71,7 @@ fun HomePage() {
                 Column(Modifier.gap(2.cssRem)) {
                     Div(HeadlineTextStyle.toAttrs()) {
                         SpanText(
-                            "Hello! ", Modifier.fontFamily("JetBrains Mono").color(
+                            "Hello! ", Modifier.fontFamily("JetBrains Mono").fontSize(FontSize.Larger).color(
                                 when (ColorMode.current) {
                                     ColorMode.LIGHT -> Color.rgb(0x282828)
                                     ColorMode.DARK -> Color.rgb(0xEBDBB2)
@@ -87,7 +80,7 @@ fun HomePage() {
                         )
                         Spacer()
                         SpanText(
-                            "I am Shubham Gorai", Modifier.fontFamily("JetBrains Mono").color(
+                            "I am Shubham Gorai", Modifier.fontFamily("JetBrains Mono").fontSize(FontSize.Larger).color(
                                 when (ColorMode.current) {
                                     ColorMode.LIGHT -> Color.rgb(0x282828)
                                     ColorMode.DARK -> Color.rgb(0xEBDBB2)
@@ -104,18 +97,15 @@ fun HomePage() {
                             )
                         )
                         Spacer()
-                        Link(
-                            "https://www.github.com/shub39/",
-                            "Github  ",
-                            Modifier.fontSize(FontSize.Large).fontFamily("JetBrains Mono").setVariable(ColorVar, sitePalette.brand.primary),
-                            variant = UncoloredLinkVariant
-                            )
-                        Link(
-                            "https://www.linkedin.com/in/shub39/",
-                            "LinkedIn  ",
-                            Modifier.fontSize(FontSize.Large).fontFamily("JetBrains Mono").setVariable(ColorVar, sitePalette.brand.primary),
-                            variant = UncoloredLinkVariant
-                        )
+
+                        Div (HeadlineTextStyle.toAttrs()){
+                            LinkButton("https://www.github.com/shub39", Modifier.margin(8.px)){
+                                FaGithub(Modifier)
+                            }
+                            LinkButton("https://www.linkedin.com/in/shub39/", Modifier.margin(8.px)){
+                                FaLinkedin()
+                            }
+                        }
                     }
                 }
             }
