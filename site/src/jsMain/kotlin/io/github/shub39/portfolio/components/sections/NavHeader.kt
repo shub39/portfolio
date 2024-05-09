@@ -36,7 +36,7 @@ import io.github.shub39.portfolio.components.widgets.IconButton
 import io.github.shub39.portfolio.toSitePalette
 
 val NavHeaderStyle by ComponentStyle.base {
-    Modifier.fontFamily("JetBrains Mono").fillMaxWidth().padding(1.cssRem)
+    Modifier.fillMaxWidth().padding(1.cssRem)
 }
 
 @Composable

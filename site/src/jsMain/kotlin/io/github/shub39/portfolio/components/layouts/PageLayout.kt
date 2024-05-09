@@ -64,7 +64,7 @@ private fun SvgCobweb(modifier: Modifier) {
 @Composable
 fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
     LaunchedEffect(title) {
-        document.title = "Kobweb - $title"
+        document.title = "shub39 - $title"
     }
 
     Box(

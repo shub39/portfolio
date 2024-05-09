@@ -13,11 +13,8 @@ import com.varabyte.kobweb.silk.components.style.cssRule
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
-import org.jetbrains.compose.web.css.DisplayStyle
-import org.jetbrains.compose.web.css.LineStyle
-import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.px
 import io.github.shub39.portfolio.toSitePalette
+import org.jetbrains.compose.web.css.*
 
 val MarkdownStyle by ComponentStyle {
     // The following rules apply to all descendant elements, indicated by the leading space.
@@ -26,49 +23,41 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("h1") {
         Modifier
-            .fontFamily("JetBrains Mono")
             .fontSize(3.cssRem)
-            .fontWeight(400)
+            .fontWeight(800)
             .margin(bottom = 2.5.cssRem)
             .lineHeight(1.2) //1.5x doesn't look as good on very large text
     }
 
     cssRule("h2") {
         Modifier
-            .fontFamily("JetBrains Mono")
-            .fontSize(3.cssRem)
-            .fontWeight(300)
+            .fontSize(2.5.cssRem)
+            .fontWeight(700)
             .margin(topBottom = 2.cssRem)
     }
 
     cssRule("h3") {
         Modifier
-            .fontFamily("JetBrains Mono")
-            .fontSize(2.4.cssRem)
-            .fontWeight(300)
+            .fontSize(2.cssRem)
+            .fontWeight(700)
             .margin(topBottom = 1.5.cssRem)
     }
 
     cssRule("h4") {
         Modifier
-            .fontFamily("JetBrains Mono")
             .fontSize(1.2.cssRem)
             .fontWeight(FontWeight.Bolder)
             .margin(top = 1.cssRem, bottom = 0.5.cssRem)
     }
 
-    cssRule("a") {
-        Modifier
-            .fontFamily("JetBrains Mono")
-    }
     cssRule("p") {
         Modifier
-            .fontFamily("JetBrains Mono")
             .margin(bottom = 0.8.cssRem)
+            .fontSize(1.7.cssRem)
     }
 
     cssRule("ul") {
-        Modifier.fontFamily("JetBrains Mono").fillMaxWidth().overflowWrap(OverflowWrap.BreakWord)
+        Modifier.fillMaxWidth().overflowWrap(OverflowWrap.BreakWord)
     }
 
     cssRule("li,ol,ul") {
@@ -77,7 +66,6 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("code") {
         Modifier
-            .fontFamily("JetBrains Mono")
             .color(colorMode.toPalette().color.toRgb().copyf(alpha = 0.8f))
             .fontWeight(FontWeight.Bolder)
     }

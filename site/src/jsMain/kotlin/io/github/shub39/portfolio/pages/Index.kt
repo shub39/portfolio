@@ -11,6 +11,8 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
 import com.varabyte.kobweb.silk.components.icons.fa.FaLinkedin
+import com.varabyte.kobweb.silk.components.icons.fa.FaMailchimp
+import com.varabyte.kobweb.silk.components.icons.fa.FaYoutube
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -23,6 +25,7 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import io.github.shub39.portfolio.HeadlineTextStyle
 import io.github.shub39.portfolio.components.layouts.PageLayout
+import io.github.shub39.portfolio.components.sections.Footer
 import io.github.shub39.portfolio.components.widgets.LinkButton
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
@@ -50,15 +53,6 @@ val HomeGridCellStyle by ComponentStyle.base {
         .borderRadius(1.cssRem)
 }
 
-@Composable
-private fun GridCell(color: Color, row: Int, column: Int, width: Int? = null, height: Int? = null) {
-    Div(
-        HomeGridCellStyle.toModifier()
-            .setVariable(GridCellColorVar, color)
-            .gridItem(row, column, width, height)
-            .toAttrs()
-    )
-}
 
 @Page
 @Composable
@@ -66,12 +60,10 @@ fun HomePage() {
     PageLayout("Home") {
         Row(HeroContainerStyle.toModifier()) {
             Box {
-                val sitePalette = ColorMode.current.toSitePalette()
-
                 Column(Modifier.gap(2.cssRem)) {
                     Div(HeadlineTextStyle.toAttrs()) {
                         SpanText(
-                            "Hello! ", Modifier.fontFamily("JetBrains Mono").fontSize(FontSize.Larger).color(
+                            "Hello!", Modifier.fontWeight(800).fontSize(FontSize.Larger).color(
                                 when (ColorMode.current) {
                                     ColorMode.LIGHT -> Color.rgb(0x282828)
                                     ColorMode.DARK -> Color.rgb(0xEBDBB2)
@@ -80,7 +72,7 @@ fun HomePage() {
                         )
                         Spacer()
                         SpanText(
-                            "I am Shubham Gorai", Modifier.fontFamily("JetBrains Mono").fontSize(FontSize.Larger).color(
+                            "I am Shubham Gorai", Modifier.fontWeight(400).fontSize(FontSize.Larger).color(
                                 when (ColorMode.current) {
                                     ColorMode.LIGHT -> Color.rgb(0x282828)
                                     ColorMode.DARK -> Color.rgb(0xEBDBB2)
@@ -89,7 +81,7 @@ fun HomePage() {
                         )
                         Spacer()
                         SpanText(
-                            "Aspiring Android Developer from India", Modifier.fontSize(fontSize = FontSize.Large).fontFamily("JetBrains Mono").color(
+                            "Aspiring Android Developer from India", Modifier.fontWeight(400).fontSize(1.5.cssRem).color(
                                 when (ColorMode.current) {
                                     ColorMode.LIGHT -> Color.rgb(0x282828)
                                     ColorMode.DARK -> Color.rgb(0xEBDBB2)
@@ -97,13 +89,15 @@ fun HomePage() {
                             )
                         )
                         Spacer()
-
                         Div (HeadlineTextStyle.toAttrs()){
-                            LinkButton("https://www.github.com/shub39", Modifier.margin(8.px)){
-                                FaGithub(Modifier)
+                            LinkButton("https://www.github.com/shub39", Modifier.margin(right = 8.px)){
+                                FaGithub()
                             }
                             LinkButton("https://www.linkedin.com/in/shub39/", Modifier.margin(8.px)){
                                 FaLinkedin()
+                            }
+                            LinkButton("https://www.youtube.com/channel/UCCp8mT5pZcySIvhDOZPYDmw", Modifier.margin(8.px)){
+                                FaYoutube()
                             }
                         }
                     }
