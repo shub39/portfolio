@@ -1,14 +1,17 @@
 package io.github.shub39.portfolio.components.layouts
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.css.OverflowWrap
 import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.foundation.layout.Spacer
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
+import com.varabyte.kobweb.silk.components.style.cssRule
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
@@ -21,7 +24,7 @@ val MarkdownStyle by ComponentStyle {
         Modifier
             .fontSize(2.cssRem)
             .fontWeight(800)
-            .margin(bottom = 2.5.cssRem)
+            .margin(bottom = 2.5.cssRem, top = 2.5.cssRem)
             .lineHeight(1.2)
     }
 
@@ -46,10 +49,21 @@ val MarkdownStyle by ComponentStyle {
             .margin(top = 1.cssRem, bottom = 0.5.cssRem)
     }
 
+    cssRule("quote") {
+        Modifier
+            .fontSize(1.2.cssRem)
+            .fontStyle(FontStyle.Italic)
+    }
+
     cssRule("p") {
         Modifier
-            .margin(bottom = 0.8.cssRem)
+            .margin(0.8.cssRem)
             .fontSize(1.2.cssRem)
+    }
+
+    cssRule("img") {
+        Modifier
+            .borderRadius(1.cssRem)
     }
 
     cssRule("ul") {
@@ -87,7 +101,7 @@ val MarkdownStyle by ComponentStyle {
 @Composable
 fun MarkdownLayout(title: String, content: @Composable () -> Unit) {
     PageLayout(title) {
-        Column(MarkdownStyle.toModifier().fillMaxSize(), horizontalAlignment = Alignment.Start) {
+        Column(MarkdownStyle.toModifier().fillMaxSize().margin(bottom = 10.cssRem), horizontalAlignment = Alignment.Start) {
             content()
         }
     }
