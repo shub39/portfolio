@@ -87,7 +87,7 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
             // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context
             // Some people might have used z-index instead, but best practice is to avoid that if possible, because
             // as a site gets complex, Z-fighting can be a huge pain to track down.
-            Modifier.fillMaxSize().gridRow(1),
+            Modifier.fontFamily("JetBrains Mono").fillMaxSize().gridRow(1),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             NavHeader()

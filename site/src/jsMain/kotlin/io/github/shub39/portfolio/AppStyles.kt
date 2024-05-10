@@ -26,7 +26,7 @@ fun initSiteStyles(ctx: InitSilkContext) {
         Modifier
             .fontFamily(
                 "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-                "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif", "JetBrains Mono"
+                "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "sans-serif"
             )
             .fontSize(18.px)
             .lineHeight(1.5)
