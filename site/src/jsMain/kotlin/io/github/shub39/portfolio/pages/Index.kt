@@ -85,7 +85,7 @@ fun HomePage() {
                                 )
                                 Spacer()
                                 SpanText(
-                                    "Aspiring Android Developer", Modifier.fontStyle(FontStyle.Italic).fontWeight(500).fontSize(1.8.cssRem).color(
+                                    "Aspiring Android Developer", Modifier.fontStyle(FontStyle.Italic).fontWeight(500).fontSize(1.5.cssRem).color(
                                         when (ColorMode.current) {
                                             ColorMode.LIGHT -> Color.rgb(0x282828)
                                             ColorMode.DARK -> Color.rgb(0xEBDBB2)

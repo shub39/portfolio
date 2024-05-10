@@ -63,7 +63,7 @@ val MarkdownStyle by ComponentStyle {
 
     cssRule("img") {
         Modifier
-            .borderRadius(1.cssRem)
+            .borderRadius(0.2.cssRem)
     }
 
     cssRule("ul") {
