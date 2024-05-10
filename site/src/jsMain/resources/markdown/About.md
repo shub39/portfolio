@@ -25,15 +25,19 @@ I'm learning C++ for competetive programming and kotlin for android development.
 
 - An attendance system made with raspberry pi 4 and python.
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=shub39&theme=dark&repo=fingerprint_attendance)](https://github.com/anuraghazra/github-readme-stats)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=shub39&theme=dark&repo=fingerprint_attendance)](https://github.com/shub39/fingerprint_attendance)
 
 - A simple discord bot for our student server capable of scraping websites and making sense of huge lists.
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=shub39&theme=dark&repo=scrapify)](https://github.com/anuraghazra/github-readme-stats)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=shub39&theme=dark&repo=scrapify)](https://github.com/shub39/scrapify)
 
 - This site was made using kotlin via kobweb.
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=shub39&theme=dark&repo=portfolio)](https://github.com/anuraghazra/github-readme-stats)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=shub39&theme=dark&repo=portfolio)](https://github.com/shub39/portfolio)
+
+- Dotfiles for my Hyprland configuration.
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=shub39&theme=dark&repo=dotfiles)](https://github.com/shub39/dotfiles)
 
 ## Things I know
 
