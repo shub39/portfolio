@@ -95,19 +95,19 @@ fun HomePage() {
                             ColorMode.DARK -> Color.rgb(0x282828)
                         }
                     )){
-                        LinkButton("https://www.github.com/shub39", Modifier.margin(8.px)){
+                        LinkButton("https://www.github.com/shub39", Modifier.margin(left = 8.px, top = 8.px, bottom = 8.px)){
                             FaGithub(Modifier)
                         }
-                        LinkButton("https://www.linkedin.com/in/shub39/", Modifier.margin(8.px)){
+                        LinkButton("https://www.linkedin.com/in/shub39/", Modifier.margin(left = 8.px, top = 8.px, bottom = 8.px)){
                             FaLinkedin()
                         }
-                        LinkButton("https://www.youtube.com/channel/UCCp8mT5pZcySIvhDOZPYDmw", Modifier.margin(8.px)){
+                        LinkButton("https://www.youtube.com/channel/UCCp8mT5pZcySIvhDOZPYDmw", Modifier.margin(left = 8.px, top = 8.px, bottom = 8.px)){
                             FaYoutube()
                         }
-                        LinkButton("https://www.reddit.com/user/PrimalWrongdoer/", Modifier.margin(8.px)){
+                        LinkButton("https://www.reddit.com/user/PrimalWrongdoer/", Modifier.margin(left = 8.px, top = 8.px, bottom = 8.px)){
                             FaReddit()
                         }
-                        LinkButton("https://www.discordapp.com/users/1125393715612094514", Modifier.margin(8.px)){
+                        LinkButton("https://www.discordapp.com/users/1125393715612094514", Modifier.margin(left = 8.px, top = 8.px, bottom = 8.px, right = 8.px)){
                             FaDiscord()
                         }
                     }
