@@ -10,10 +10,7 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
-import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
-import com.varabyte.kobweb.silk.components.icons.fa.FaLinkedin
-import com.varabyte.kobweb.silk.components.icons.fa.FaMailchimp
-import com.varabyte.kobweb.silk.components.icons.fa.FaYoutube
+import com.varabyte.kobweb.silk.components.icons.fa.*
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
@@ -31,7 +28,9 @@ import io.github.shub39.portfolio.components.widgets.LinkButton
 import io.github.shub39.portfolio.components.widgets.ThemedButton
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.dom.Col
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Li
 
 // Container that has a tagline and grid on desktop, and just the tagline on mobile
 val HeroContainerStyle by ComponentStyle {
@@ -62,48 +61,54 @@ fun HomePage() {
     PageLayout("Home") {
         Row(HeroContainerStyle.toModifier()) {
             Box {
-                Column(Modifier.gap(2.cssRem)){
+                Column(Modifier.gap(2.cssRem).borderRadius(3.cssRem).padding(all = 3.cssRem).backgroundColor(
+                    when (ColorMode.current){
+                        ColorMode.LIGHT -> Color.rgb(0x282828)
+                        ColorMode.DARK -> Color.rgb(0xEBDBB2)
+                    }
+                ).color(
+                    when (ColorMode.current){
+                        ColorMode.LIGHT -> Color.rgb(0xEBDBB2)
+                        ColorMode.DARK -> Color.rgb(0x282828)
+                    }
+                )){
                     Column(Modifier.gap(1.cssRem)){
                         Div(HeadlineTextStyle.toAttrs()) {
                             SpanText(
-                                "Hello! \uD83D\uDC4B", Modifier.fontWeight(600).fontSize(FontSize.Larger).color(
-                                    when (ColorMode.current) {
-                                        ColorMode.LIGHT -> Color.rgb(0x282828)
-                                        ColorMode.DARK -> Color.rgb(0xEBDBB2)
-                                    }
-                                )
+                                "Hello!", Modifier.fontWeight(600).fontSize(FontSize.Larger)
                             )
                             Spacer()
                             Column(Modifier.gap(0.cssRem)){
                                 SpanText(
-                                    "I am Shubham Gorai", Modifier.fontWeight(400).fontSize(2.cssRem).color(
-                                        when (ColorMode.current) {
-                                            ColorMode.LIGHT -> Color.rgb(0x282828)
-                                            ColorMode.DARK -> Color.rgb(0xEBDBB2)
-                                        }
-                                    )
+                                    "I am Shubham Gorai", Modifier.fontWeight(400).fontSize(2.cssRem)
                                 )
                                 Spacer()
                                 SpanText(
-                                    "Aspiring Android Developer", Modifier.fontStyle(FontStyle.Italic).fontWeight(50).fontSize(1.2.cssRem).color(
-                                        when (ColorMode.current) {
-                                            ColorMode.LIGHT -> Color.rgb(0x282828)
-                                            ColorMode.DARK -> Color.rgb(0xEBDBB2)
-                                        }
-                                    )
+                                    "Aspiring Android Developer", Modifier.fontStyle(FontStyle.Italic).fontWeight(50).fontSize(1.2.cssRem)
                                 )
                             }
                         }
                     }
-                    Div (HeadlineTextStyle.toAttrs()){
-                        LinkButton("https://www.github.com/shub39", Modifier.margin(right = 8.px)){
-                            FaGithub()
+                    Row(Modifier.padding(all = 0.1.cssRem).borderRadius(1.cssRem).backgroundColor(
+                        when (ColorMode.current){
+                            ColorMode.LIGHT -> Color.rgb(0xEBDBB2)
+                            ColorMode.DARK -> Color.rgb(0x282828)
+                        }
+                    )){
+                        LinkButton("https://www.github.com/shub39", Modifier.margin(8.px)){
+                            FaGithub(Modifier)
                         }
                         LinkButton("https://www.linkedin.com/in/shub39/", Modifier.margin(8.px)){
                             FaLinkedin()
                         }
                         LinkButton("https://www.youtube.com/channel/UCCp8mT5pZcySIvhDOZPYDmw", Modifier.margin(8.px)){
                             FaYoutube()
+                        }
+                        LinkButton("https://www.reddit.com/user/PrimalWrongdoer/", Modifier.margin(8.px)){
+                            FaReddit()
+                        }
+                        LinkButton("https://www.discordapp.com/users/1125393715612094514", Modifier.margin(8.px)){
+                            FaDiscord()
                         }
                     }
                 }
