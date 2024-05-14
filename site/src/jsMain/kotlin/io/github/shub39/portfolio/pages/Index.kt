@@ -23,7 +23,6 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import io.github.shub39.portfolio.HeadlineTextStyle
 import io.github.shub39.portfolio.components.layouts.PageLayout
-import io.github.shub39.portfolio.components.sections.Footer
 import io.github.shub39.portfolio.components.widgets.LinkButton
 import io.github.shub39.portfolio.components.widgets.ThemedButton
 import io.github.shub39.portfolio.toSitePalette
@@ -31,6 +30,7 @@ import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Col
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
+import org.jetbrains.compose.web.dom.Span
 
 // Container that has a tagline and grid on desktop, and just the tagline on mobile
 val HeroContainerStyle by ComponentStyle {

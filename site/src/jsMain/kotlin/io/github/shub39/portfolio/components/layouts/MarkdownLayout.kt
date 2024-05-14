@@ -5,6 +5,7 @@ import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.css.OverflowWrap
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Spacer
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -61,11 +62,6 @@ val MarkdownStyle by ComponentStyle {
             .fontSize(1.2.cssRem)
     }
 
-    cssRule("img") {
-        Modifier
-            .borderRadius(0.2.cssRem)
-    }
-
     cssRule("ul") {
         Modifier.fillMaxWidth().overflowWrap(OverflowWrap.BreakWord)
     }
@@ -101,7 +97,7 @@ val MarkdownStyle by ComponentStyle {
 @Composable
 fun MarkdownLayout(title: String, content: @Composable () -> Unit) {
     PageLayout(title) {
-        Column(MarkdownStyle.toModifier().fillMaxSize().margin(bottom = 10.cssRem), horizontalAlignment = Alignment.Start) {
+        Column(MarkdownStyle.toModifier().fillMaxSize().margin(bottom = 10.cssRem), horizontalAlignment = Alignment.CenterHorizontally) {
             content()
         }
     }

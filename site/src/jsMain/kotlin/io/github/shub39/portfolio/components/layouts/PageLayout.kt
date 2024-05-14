@@ -3,6 +3,7 @@ package io.github.shub39.portfolio.components.layouts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import com.varabyte.kobweb.compose.dom.svg.*
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.ColumnScope
@@ -18,7 +19,6 @@ import kotlinx.browser.document
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.percent
-import io.github.shub39.portfolio.components.sections.Footer
 import io.github.shub39.portfolio.components.sections.NavHeader
 import io.github.shub39.portfolio.toSitePalette
 

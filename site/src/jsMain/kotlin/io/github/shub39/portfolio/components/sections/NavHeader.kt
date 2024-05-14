@@ -47,6 +47,7 @@ private fun NavLink(path: String, text: String) {
 @Composable
 private fun MenuItems() {
     NavLink("/", "Home")
+    NavLink("/about", "About")
 }
 
 @Composable
@@ -104,6 +105,7 @@ fun NavHeader() {
         Spacer()
 
         Row(Modifier.gap(1.5.cssRem).displayIfAtLeast(Breakpoint.MD), verticalAlignment = Alignment.CenterVertically) {
+            MenuItems()
             ColorModeButton()
         }
 
@@ -114,7 +116,17 @@ fun NavHeader() {
                 .displayUntil(Breakpoint.MD),
             verticalAlignment = Alignment.CenterVertically
         ) {
+            var menuState by remember { mutableStateOf(SideMenuState.CLOSED) }
             ColorModeButton()
+            HamburgerButton(onClick =  { menuState = SideMenuState.OPEN })
+
+            if (menuState != SideMenuState.CLOSED) {
+                SideMenu(
+                    menuState,
+                    close = { menuState = menuState.close() },
+                    onAnimationEnd = { if (menuState == SideMenuState.CLOSING) menuState = SideMenuState.CLOSED },
+                )
+            }
         }
     }
 }
@@ -123,6 +135,7 @@ fun NavHeader() {
 private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd: () -> Unit) {
     Overlay(
         Modifier
+            .fontFamily("JetBrains Mono")
             .setVariable(OverlayVars.BackgroundColor, Colors.Transparent)
             .onClick { close() }
     ) {
