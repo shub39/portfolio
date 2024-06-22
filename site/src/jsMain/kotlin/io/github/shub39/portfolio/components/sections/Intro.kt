@@ -46,7 +46,7 @@ fun Intro() {
             text = "Hello I'm Shubham!",
             modifier = Modifier
                 .fontWeight(FontWeight.Bold)
-                .fontSize(FontSize.XXLarge)
+                .fontSize(FontSize.XLarge)
                 .textAlign(TextAlign.Center)
         )
         SpanText(

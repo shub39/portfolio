@@ -5,4 +5,10 @@
 
 Made using <a href="https://kobweb.varabyte.com/">Kobweb</a>. Only because i dont want to learn javascript and kotlin is fun 🫠
 
-currently work in progress...
+### Inspiration 🌟
+- [ItamiOMW's site](https://github.com/ItamiOMW/ItamiMobileSite)
+
+### Plans 🛠️
+- [ ] Add Animations
+- [ ] Add more colors from gruvbox
+- [ ] Add Resume page / button

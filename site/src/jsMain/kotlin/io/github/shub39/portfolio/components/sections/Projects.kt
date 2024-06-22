@@ -31,10 +31,11 @@ fun Projects() {
             .padding(1.5.cssRem)
             .fillMaxWidth()
             .displayIfAtLeast(Breakpoint.XL),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(
-            modifier = Modifier.gap(0.5.cssRem).fillMaxWidth()
+            modifier = Modifier.gap(0.5.cssRem).fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             SpanText(
                 text = "Projects",
