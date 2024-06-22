@@ -106,6 +106,18 @@ fun Projects() {
                 image = "BiometricPreview.jpg",
                 link = "https://github.com/shub39/fingerprint_attendance"
             )
+            ProjectCard(
+                title = "Scrapify",
+                description = "A Simple multipurpose Discord bot",
+                image = "Scrapify.jpg",
+                link = "https://github.com/shub39/scrapify"
+            )
+            ProjectCard(
+                title = "Portfolio site",
+                description = "This Website was built using Kobweb",
+                image = "Kobweb.jpg",
+                link = "https://github.com/shub39/portfolio"
+            )
         }
     }
 }
