@@ -59,8 +59,23 @@ fun Projects() {
                     link = "https://github.com/shub39/fingerprint_attendance"
                 )
             }
+            Row(modifier = Modifier.gap(0.5.cssRem)) {
+                ProjectCard(
+                    title = "Scrapify",
+                    description = "A Simple multipurpose Discord bot",
+                    image = "Scrapify.jpg",
+                    link = "https://github.com/shub39/scrapify"
+                )
+                ProjectCard(
+                    title = "Portfolio site",
+                    description = "This Website was built using Kobweb",
+                    image = "Kobweb.jpg",
+                    link = "https://github.com/shub39/portfolio"
+                )
+            }
         }
     }
+
     Row(
         Modifier
             .fontSize(1.5.cssRem)
@@ -124,16 +139,16 @@ fun ProjectCard(
             attrs = Modifier
                 .fillMaxWidth()
                 .borderRadius(1.cssRem)
-                .height(300.px)
-                .width(400.px)
+                .height(270.px)
+                .width(360.px)
                 .toAttrs()
         )
 
         Row(
-            modifier = Modifier.fillMaxWidth().padding(1.cssRem),
+            modifier = Modifier.fillMaxWidth().padding(0.5.cssRem),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Column(modifier = Modifier.width(300.px)) {
+            Column {
                 SpanText(
                     text = title,
                     modifier = Modifier
@@ -145,7 +160,8 @@ fun ProjectCard(
                     text = description,
                     modifier = Modifier
                         .fontSize(FontSize.Large)
-                        .fontWeight(FontWeight.Medium),
+                        .fontWeight(FontWeight.Medium)
+                        .maxWidth(300.px),
                 )
             }
 
