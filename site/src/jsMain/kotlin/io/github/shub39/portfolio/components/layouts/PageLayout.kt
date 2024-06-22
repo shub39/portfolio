@@ -35,7 +35,6 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
             .gridTemplateRows { size(1.fr); size(minContent) },
         contentAlignment = Alignment.Center
     ) {
-
         Column(
             Modifier.fontFamily("JetBrains Mono").fillMaxSize().gridRow(1),
             horizontalAlignment = Alignment.CenterHorizontally,
