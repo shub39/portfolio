@@ -54,25 +54,35 @@ fun Projects() {
                     link = "https://github.com/shub39/Grit"
                 )
                 ProjectCard(
+                    title = "Rush",
+                    description = "An app to view and download lyrics",
+                    image = "Rush.png",
+                    link = "https://github.com/shub39/Rush"
+                )
+
+            }
+            Row(modifier = Modifier.gap(0.5.cssRem)) {
+                ProjectCard(
                     title = "Biometric Attendance",
                     description = "A Biometric Attendance system using Raspberry pi",
                     image = "BiometricPreview.jpg",
                     link = "https://github.com/shub39/fingerprint_attendance"
                 )
-            }
-            Row(modifier = Modifier.gap(0.5.cssRem)) {
                 ProjectCard(
                     title = "Scrapify",
                     description = "A Simple multipurpose Discord bot",
                     image = "Scrapify.jpg",
                     link = "https://github.com/shub39/scrapify"
                 )
+            }
+            Row(modifier = Modifier.gap(0.5.cssRem)) {
                 ProjectCard(
                     title = "Portfolio site",
                     description = "This Website was built using Kobweb",
                     image = "Kobweb.jpg",
                     link = "https://github.com/shub39/portfolio"
                 )
+
             }
         }
     }
@@ -100,6 +110,12 @@ fun Projects() {
                 description = "A Simple ToDo Lists and Habit tracker Android App",
                 image = "GritPreview.png",
                 link = "https://github.com/shub39/Grit"
+            )
+            ProjectCard(
+                title = "Rush",
+                description = "An app to view and download lyrics",
+                image = "Rush.png",
+                link = "https://github.com/shub39/Rush"
             )
             ProjectCard(
                 title = "Biometric Attendance",
