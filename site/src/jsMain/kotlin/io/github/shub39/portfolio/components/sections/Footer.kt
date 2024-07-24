@@ -36,7 +36,7 @@ fun Footer(modifier: Modifier = Modifier) {
             Link(
                 "https://github.com/varabyte/kobweb",
                 "Kobweb",
-                Modifier.setVariable(ColorVar, sitePalette.brand.accent).whiteSpace(WhiteSpace.NoWrap),
+                Modifier.setVariable(ColorVar, sitePalette.brand.dark0).whiteSpace(WhiteSpace.NoWrap),
                 variant = UncoloredLinkVariant
             )
             SpanText(", Source at ")
@@ -44,7 +44,7 @@ fun Footer(modifier: Modifier = Modifier) {
             Link(
                 "https://github.com/shub39/portfolio",
                 "Github",
-                Modifier.setVariable(ColorVar, sitePalette.brand.accent).whiteSpace(WhiteSpace.NoWrap),
+                Modifier.setVariable(ColorVar, sitePalette.brand.fadedYellow).whiteSpace(WhiteSpace.NoWrap),
                 variant = UncoloredLinkVariant
             )
         }

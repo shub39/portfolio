@@ -154,7 +154,8 @@ fun ProjectCard(
                     ColorMode.LIGHT -> Color.rgb(0x282828)
                     ColorMode.DARK -> Color.rgb(0xEBDBB2)
                 }
-            ).color(
+            )
+            .color(
                 when (ColorMode.current) {
                     ColorMode.LIGHT -> Color.rgb(0xEBDBB2)
                     ColorMode.DARK -> Color.rgb(0x282828)
@@ -168,8 +169,8 @@ fun ProjectCard(
             attrs = Modifier
                 .fillMaxWidth()
                 .borderRadius(1.cssRem)
-                .height(270.px)
-                .width(360.px)
+                .height(180.px)
+                .width(240.px)
                 .toAttrs()
         )
 

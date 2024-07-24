@@ -1,7 +1,6 @@
 import com.varabyte.kobweb.gradle.application.extensions.AppBlock.LegacyRouteRedirectStrategy
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import kotlinx.html.link
-import org.gradle.internal.impldep.org.eclipse.jgit.transport.ReceiveCommand.link
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -11,7 +10,7 @@ plugins {
 }
 
 group = "io.github.shub39.portfolio"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 kobweb {
     app {
@@ -23,6 +22,10 @@ kobweb {
                     href = "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap",
                     rel = "stylesheet"
                 )
+                link(
+                    href = "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+                    rel = "stylesheet"
+                )
             description.set("Powered by Kobweb")
         }
         legacyRouteRedirectStrategy.set(LegacyRouteRedirectStrategy.DISALLOW)
@@ -30,9 +33,7 @@ kobweb {
 }
 
 kotlin {
-    // This example is frontend only. However, for a fullstack app, you can uncomment the includeServer parameter
-    // and the `jvmMain` source set below.
-    configAsKobwebApplication("portfolio" /*, includeServer = true*/)
+    configAsKobwebApplication("portfolio")
 
     sourceSets {
         commonMain.dependencies {
@@ -44,17 +45,8 @@ kotlin {
             implementation(libs.kobweb.core)
             implementation(libs.kobweb.silk)
             implementation(libs.silk.icons.fa)
-
-            // This default template uses built-in SVG icons, but what's available is limited.
-            // Uncomment the following if you want access to a large set of font-awesome icons:
-            // implementation(libs.silk.icons.fa)
-            implementation(libs.kobwebx.markdown)
         }
 
-        // Uncomment the following if you pass `includeServer = true` into the `configAsKobwebApplication` call.
-//        jvmMain.dependencies {
-//            compileOnly(libs.kobweb.api) // Provided by Kobweb backend at runtime
-//        }
     }
 }
 }

@@ -19,7 +19,7 @@ import io.github.shub39.portfolio.components.sections.NavHeader
 
 val PageContentStyle by ComponentStyle {
     base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem, top = 4.cssRem) }
-    Breakpoint.MD { Modifier.maxWidth(60.cssRem) }
+    Breakpoint.MD { Modifier.maxWidth(80.cssRem) }
 }
 
 @Composable
@@ -36,7 +36,7 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
         contentAlignment = Alignment.Center
     ) {
         Column(
-            Modifier.fontFamily("JetBrains Mono").fillMaxSize().gridRow(1),
+            Modifier.fontFamily("Poppins").fillMaxSize().gridRow(1),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             NavHeader()
