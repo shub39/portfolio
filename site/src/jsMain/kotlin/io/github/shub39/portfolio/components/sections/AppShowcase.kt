@@ -18,17 +18,17 @@ fun AppShowcase() {
     val title = "Apps"
 
     //Desktop View
-    Row(
-        modifier = Modifier
-            .displayIfAtLeast(Breakpoint.XL)
-            .padding(5.cssRem)
-    ) {
-        SpanText(
-            text = title,
-            modifier = Modifier
-                .fontWeight(FontWeight.Bolder)
-                .fontSize(FontSize.XXLarge)
-        )
-    }
+//    Row(
+//        modifier = Modifier
+//            .displayIfAtLeast(Breakpoint.XL)
+//            .padding(5.cssRem)
+//    ) {
+//        SpanText(
+//            text = title,
+//            modifier = Modifier
+//                .fontWeight(FontWeight.Bolder)
+//                .fontSize(FontSize.XXLarge)
+//        )
+//    }
 
 }

@@ -25,6 +25,7 @@ import org.jetbrains.compose.web.dom.Img
 
 @Composable
 fun Projects() {
+    val title = "My Projects"
 
     // Mobile View
     Row(
@@ -40,7 +41,7 @@ fun Projects() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             SpanText(
-                text = "Other Projects",
+                text = title,
                 modifier = Modifier
                     .padding(1.5.cssRem)
                     .fontSize(FontSize.XXLarge)
@@ -48,6 +49,20 @@ fun Projects() {
                     .textAlign(TextAlign.Center)
                     .fontWeight(FontWeight.Bolder)
             )
+            Row(modifier = Modifier.gap(0.5.cssRem)) {
+                ProjectCard(
+                    title = "Grit",
+                    description = "A Simple ToDo Lists and Habit tracker Android App",
+                    image = "GritPreview.png",
+                    link = "https://github.com/shub39/Grit"
+                )
+                ProjectCard(
+                    title = "Rush",
+                    description = "An app to view and download lyrics",
+                    image = "Rush.png",
+                    link = "https://github.com/shub39/Rush"
+                )
+            }
             Row(modifier = Modifier.gap(0.5.cssRem)) {
                 ProjectCard(
                     title = "Biometric Attendance",
@@ -85,13 +100,25 @@ fun Projects() {
     ) {
         Column(Modifier.gap(0.5.cssRem)) {
             SpanText(
-                text = "Other Projects",
+                text = title,
                 modifier = Modifier
                     .padding(1.5.cssRem)
                     .fontSize(FontSize.XXLarge)
                     .fillMaxWidth()
                     .textAlign(TextAlign.Center)
                     .fontWeight(FontWeight.Bolder)
+            )
+            ProjectCard(
+                title = "Grit",
+                description = "A Simple ToDo Lists and Habit tracker Android App",
+                image = "GritPreview.png",
+                link = "https://github.com/shub39/Grit"
+            )
+            ProjectCard(
+                title = "Rush",
+                description = "An app to view and download lyrics",
+                image = "Rush.png",
+                link = "https://github.com/shub39/Rush"
             )
             ProjectCard(
                 title = "Biometric Attendance",

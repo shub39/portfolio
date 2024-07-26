@@ -12,13 +12,31 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.icons.fa.FaAndroid
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
+import com.varabyte.kobweb.silk.style.selectors.hover
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Img
+
+val desktopCssStyle = CssStyle {
+    base {
+        Modifier
+            .height(500.px)
+            .width(250.px)
+            .margin(topBottom = 8.cssRem)
+    }
+    hover {
+        Modifier
+            .height(550.px)
+            .width(275.px)
+            .margin(topBottom = 4.cssRem)
+    }
+}
 
 @Composable
 fun Intro() {
@@ -28,6 +46,7 @@ fun Intro() {
     Box(
         modifier = Modifier
             .displayUntil(Breakpoint.XL)
+            .padding(topBottom = 5.cssRem)
     ) {
         Column(
             modifier = Modifier
@@ -139,27 +158,19 @@ fun Intro() {
         ) {
             Img(
                 src = "GritAnalytics.png",
-                attrs = Modifier
-                    .height(500.px)
-                    .width(250.px)
-                    .margin(right = (-20).px)
+                attrs = desktopCssStyle.toModifier()
                     .toAttrs()
             )
 
             Img(
                 src = "RushCard.png",
-                attrs = Modifier
-                    .height(500.px)
-                    .width(250.px)
-                    .margin(right = (-20).px)
+                attrs = desktopCssStyle.toModifier()
                     .toAttrs()
             )
 
             Img(
                 src = "RushLyrics.png",
-                attrs = Modifier
-                    .height(500.px)
-                    .width(250.px)
+                attrs = desktopCssStyle.toModifier()
                     .toAttrs()
             )
         }
