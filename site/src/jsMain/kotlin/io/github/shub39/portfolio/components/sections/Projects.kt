@@ -13,9 +13,9 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.icons.fa.FaArrowUpRightFromSquare
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIfAtLeast
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayUntil
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
+import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import io.github.shub39.portfolio.components.widgets.LinkButton
@@ -25,6 +25,8 @@ import org.jetbrains.compose.web.dom.Img
 
 @Composable
 fun Projects() {
+
+    // Mobile View
     Row(
         Modifier
             .gap(1.5.cssRem)
@@ -38,7 +40,7 @@ fun Projects() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             SpanText(
-                text = "Projects",
+                text = "Other Projects",
                 modifier = Modifier
                     .padding(1.5.cssRem)
                     .fontSize(FontSize.XXLarge)
@@ -46,21 +48,6 @@ fun Projects() {
                     .textAlign(TextAlign.Center)
                     .fontWeight(FontWeight.Bolder)
             )
-            Row(modifier = Modifier.gap(0.5.cssRem)) {
-                ProjectCard(
-                    title = "Grit",
-                    description = "A Simple ToDo Lists and Habit tracker Android App",
-                    image = "GritPreview.png",
-                    link = "https://github.com/shub39/Grit"
-                )
-                ProjectCard(
-                    title = "Rush",
-                    description = "An app to view and download lyrics",
-                    image = "Rush.png",
-                    link = "https://github.com/shub39/Rush"
-                )
-
-            }
             Row(modifier = Modifier.gap(0.5.cssRem)) {
                 ProjectCard(
                     title = "Biometric Attendance",
@@ -87,6 +74,7 @@ fun Projects() {
         }
     }
 
+    // Desktop View
     Row(
         Modifier
             .fontSize(1.5.cssRem)
@@ -97,25 +85,13 @@ fun Projects() {
     ) {
         Column(Modifier.gap(0.5.cssRem)) {
             SpanText(
-                text = "Projects",
+                text = "Other Projects",
                 modifier = Modifier
                     .padding(1.5.cssRem)
                     .fontSize(FontSize.XXLarge)
                     .fillMaxWidth()
                     .textAlign(TextAlign.Center)
                     .fontWeight(FontWeight.Bolder)
-            )
-            ProjectCard(
-                title = "Grit",
-                description = "A Simple ToDo Lists and Habit tracker Android App",
-                image = "GritPreview.png",
-                link = "https://github.com/shub39/Grit"
-            )
-            ProjectCard(
-                title = "Rush",
-                description = "An app to view and download lyrics",
-                image = "Rush.png",
-                link = "https://github.com/shub39/Rush"
             )
             ProjectCard(
                 title = "Biometric Attendance",

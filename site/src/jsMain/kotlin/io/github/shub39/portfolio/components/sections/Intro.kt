@@ -11,10 +11,10 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.icons.fa.FaAndroid
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIfAtLeast
-import com.varabyte.kobweb.silk.components.layout.breakpoint.displayUntil
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
+import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
@@ -24,6 +24,7 @@ import org.jetbrains.compose.web.dom.Img
 fun Intro() {
     val sitePalette = ColorMode.current.toSitePalette()
 
+    // Mobile View
     Box(
         modifier = Modifier
             .displayUntil(Breakpoint.XL)
@@ -94,6 +95,7 @@ fun Intro() {
         }
     }
 
+    // Desktop View
     Box(
         modifier = Modifier
             .displayIfAtLeast(Breakpoint.XL)

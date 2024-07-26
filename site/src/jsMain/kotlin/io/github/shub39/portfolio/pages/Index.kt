@@ -13,6 +13,7 @@ import io.github.shub39.portfolio.components.sections.*
 fun HomePage() {
     PageLayout("Home") {
         Intro()
+        AppShowcase()
         Projects()
         Skills()
         Contact()
