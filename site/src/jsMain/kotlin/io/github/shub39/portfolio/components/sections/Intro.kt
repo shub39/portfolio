@@ -4,13 +4,13 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
-import com.varabyte.kobweb.silk.components.icons.fa.FaAndroid
-import com.varabyte.kobweb.silk.components.icons.fa.IconSize
+import com.varabyte.kobweb.silk.components.icons.fa.*
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
@@ -28,13 +28,8 @@ val desktopCssStyle = CssStyle {
         Modifier
             .height(500.px)
             .width(250.px)
-            .margin(topBottom = 8.cssRem)
-    }
-    hover {
-        Modifier
-            .height(550.px)
-            .width(275.px)
-            .margin(topBottom = 4.cssRem)
+            .transition(Transition.of("ease-in", 0.2.s))
+            .position(Position.Relative)
     }
 }
 
@@ -119,10 +114,12 @@ fun Intro() {
         modifier = Modifier
             .displayIfAtLeast(Breakpoint.XL)
             .fillMaxWidth()
+            .padding(topBottom = 3.cssRem)
     ) {
         Column(
             modifier = Modifier
-                .align(Alignment.CenterStart),
+                .align(Alignment.CenterStart)
+                .borderRadius(1.cssRem),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(
@@ -150,6 +147,13 @@ fun Intro() {
                     .color(sitePalette.brand.light0Soft)
                     .textAlign(TextAlign.Center)
             )
+
+            Row(
+                modifier = Modifier.padding(1.cssRem)
+            ) {
+                FaComputerMouse()
+                FaArrowDown(modifier = Modifier.padding(left = 1.cssRem))
+            }
         }
 
         Row(

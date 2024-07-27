@@ -21,6 +21,7 @@ import com.varabyte.kobweb.silk.theme.colors.palette.background
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
 import com.varabyte.kobweb.silk.theme.colors.shifted
+import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
@@ -38,27 +39,27 @@ private fun getButtonModifier(shape: ButtonShape): Modifier {
 }
 
 val PrimaryButtonVariant = ButtonStyle.addVariant {
-    val backgroundColor = Color.rgb(0, 121, 242)
+    val color = colorMode.toSitePalette()
     base {
         Modifier
-            .backgroundColor(backgroundColor)
-            .color(Colors.White)
+            .backgroundColor(color.brand.brightOrange)
+            .color(color.brand.dark0Hard)
     }
 
     hover {
-        Modifier.backgroundColor(backgroundColor.lightened())
+        Modifier.backgroundColor(color.brand.light0Soft)
     }
 }
 
 val NormalButtonVariant = ButtonStyle.addVariant {
-    val colorMode = colorMode.opposite
+    val color = colorMode.toSitePalette()
     base {
         Modifier
-            .backgroundColor(colorMode.toPalette().background)
-            .color(colorMode.toPalette().color)
+            .backgroundColor(color.brand.brightGreen)
+            .color(color.brand.dark0Hard)
     }
     hover {
-        Modifier.backgroundColor(colorMode.toPalette().background.shifted(colorMode))
+        Modifier.backgroundColor(color.brand.fadedGreen)
     }
 }
 

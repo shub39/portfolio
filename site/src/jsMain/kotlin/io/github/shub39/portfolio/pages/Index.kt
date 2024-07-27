@@ -17,6 +17,5 @@ fun HomePage() {
         Projects()
         Skills()
         Contact()
-        Footer(Modifier.fillMaxWidth().gridRow(2))
     }
 }

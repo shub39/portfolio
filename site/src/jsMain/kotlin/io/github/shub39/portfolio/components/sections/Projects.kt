@@ -9,7 +9,6 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.icons.fa.FaArrowUpRightFromSquare
@@ -19,13 +18,15 @@ import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import io.github.shub39.portfolio.components.widgets.LinkButton
+import io.github.shub39.portfolio.toSitePalette
+import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Img
 
 @Composable
 fun Projects() {
-    val title = "My Projects"
+    val title = "Other Projects"
 
     // Mobile View
     Row(
@@ -49,20 +50,6 @@ fun Projects() {
                     .textAlign(TextAlign.Center)
                     .fontWeight(FontWeight.Bolder)
             )
-            Row(modifier = Modifier.gap(0.5.cssRem)) {
-                ProjectCard(
-                    title = "Grit",
-                    description = "A Simple ToDo Lists and Habit tracker Android App",
-                    image = "GritPreview.png",
-                    link = "https://github.com/shub39/Grit"
-                )
-                ProjectCard(
-                    title = "Rush",
-                    description = "An app to view and download lyrics",
-                    image = "Rush.png",
-                    link = "https://github.com/shub39/Rush"
-                )
-            }
             Row(modifier = Modifier.gap(0.5.cssRem)) {
                 ProjectCard(
                     title = "Biometric Attendance",
@@ -109,18 +96,6 @@ fun Projects() {
                     .fontWeight(FontWeight.Bolder)
             )
             ProjectCard(
-                title = "Grit",
-                description = "A Simple ToDo Lists and Habit tracker Android App",
-                image = "GritPreview.png",
-                link = "https://github.com/shub39/Grit"
-            )
-            ProjectCard(
-                title = "Rush",
-                description = "An app to view and download lyrics",
-                image = "Rush.png",
-                link = "https://github.com/shub39/Rush"
-            )
-            ProjectCard(
                 title = "Biometric Attendance",
                 description = "A Biometric Attendance system using Raspberry pi",
                 image = "BiometricPreview.jpg",
@@ -149,21 +124,13 @@ fun ProjectCard(
     image: String,
     link: String = ""
 ) {
+    val sitePalette = ColorMode.current.toSitePalette()
+
     Column(
         modifier = Modifier.padding(1.3.cssRem)
             .gap(1.cssRem)
-            .backgroundColor(
-                when (ColorMode.current) {
-                    ColorMode.LIGHT -> Color.rgb(0x282828)
-                    ColorMode.DARK -> Color.rgb(0xEBDBB2)
-                }
-            )
-            .color(
-                when (ColorMode.current) {
-                    ColorMode.LIGHT -> Color.rgb(0xEBDBB2)
-                    ColorMode.DARK -> Color.rgb(0x282828)
-                }
-            )
+            .color(sitePalette.brand.light0Hard)
+            .border(width = 5.px, style = LineStyle.Dashed, color = sitePalette.brand.fadedYellow)
             .borderRadius(2.cssRem)
             .padding(1.cssRem)
     ) {
@@ -172,8 +139,8 @@ fun ProjectCard(
             attrs = Modifier
                 .fillMaxWidth()
                 .borderRadius(1.cssRem)
-                .height(180.px)
-                .width(240.px)
+                .height(240.px)
+                .width(320.px)
                 .toAttrs()
         )
 
@@ -200,7 +167,8 @@ fun ProjectCard(
 
             if (link.isNotEmpty()) {
                 LinkButton(
-                    path = link
+                    path = link,
+                    primary = true
                 ) { FaArrowUpRightFromSquare() }
             }
         }
