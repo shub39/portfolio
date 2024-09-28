@@ -98,7 +98,7 @@ fun Intro() {
                 }
 
                 LinkButton(
-                    path = "resume",
+                    path = "https://github.com/shub39/portfolio/blob/main/site/src/jsMain/resources/public/Resume.pdf",
                     primary = true,
                     modifier = Modifier.fontFamily("Poppins"),
                 ) {
@@ -190,7 +190,7 @@ fun Intro() {
                 }
 
                 LinkButton(
-                    path = "resume",
+                    path = "https://github.com/shub39/portfolio/blob/main/site/src/jsMain/resources/public/Resume.pdf",
                     primary = true,
                     modifier = Modifier.fontFamily("Poppins"),
                 ) {
