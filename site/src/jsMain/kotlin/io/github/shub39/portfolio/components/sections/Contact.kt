@@ -36,7 +36,7 @@ fun Contact() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 SpanText(
-                    "Contact me",
+                    "Contacts",
                     Modifier
                         .fontWeight(600)
                         .fontSize(FontSize.XLarge)
@@ -65,9 +65,6 @@ fun SocialLinksRow() {
         SocialLinkButton(
             "https://www.github.com/shub39"
         ) { FaGithub(size = IconSize.XXL) }
-        SocialLinkButton(
-            "https://www.youtube.com/channel/UCCp8mT5pZcySIvhDOZPYDmw"
-        ) { FaYoutube(size = IconSize.XXL) }
         SocialLinkButton(
             "https://www.discordapp.com/users/1125393715612094514"
         ) { FaDiscord(size = IconSize.XXL) }

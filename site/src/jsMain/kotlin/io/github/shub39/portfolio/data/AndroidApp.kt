@@ -1,4 +1,4 @@
-package io.github.shub39.portfolio.Data
+package io.github.shub39.portfolio.data
 
 data class AndroidApp(
     val screenshots: List<String>,

@@ -18,7 +18,7 @@ import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import com.varabyte.kobweb.silk.style.toAttrs
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import io.github.shub39.portfolio.Data.AndroidApp
+import io.github.shub39.portfolio.data.AndroidApp
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
@@ -51,11 +51,11 @@ fun AppCard(
     Row(
         modifier = Modifier
             .padding(1.cssRem)
-            .displayIfAtLeast(Breakpoint.XL)
+            .displayIfAtLeast(Breakpoint.MD)
             .fillMaxWidth()
     ) {
         Row {
-            app.screenshots.forEachIndexed { index, screenshot ->
+            app.screenshots.forEachIndexed { _, screenshot ->
                 Img(
                     src = screenshot,
                     attrs = desktopImageStyle.toAttrs()
@@ -91,7 +91,7 @@ fun AppCard(
                         .fontWeight(FontWeight.Normal)
                         .margin(bottom = 1.cssRem)
                 )
-                app.technologies.forEachIndexed { index, name ->
+                app.technologies.forEachIndexed { _, name ->
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.margin(bottom = 0.5.cssRem)
@@ -118,7 +118,7 @@ fun AppCard(
     // Mobile View
     Row(
         modifier = Modifier
-            .displayUntil(Breakpoint.XL)
+            .displayUntil(Breakpoint.MD)
             .fillMaxWidth()
     ) {
         Column(modifier = Modifier.fillMaxWidth()) {
@@ -136,7 +136,7 @@ fun AppCard(
                         .padding(bottom = 1.cssRem),
                     horizontalArrangement = Arrangement.Center
                 ) {
-                    app.screenshots.forEachIndexed { index, screenshot ->
+                    app.screenshots.forEachIndexed { _, screenshot ->
                         Img(
                             src = screenshot,
                             attrs = mobileImageStyle.toAttrs()
@@ -156,7 +156,7 @@ fun AppCard(
                         .fontWeight(FontWeight.Normal)
                         .margin(bottom = 1.cssRem)
                 )
-                app.technologies.forEachIndexed { index, name ->
+                app.technologies.forEachIndexed { _, name ->
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                         modifier = Modifier.margin(bottom = 0.5.cssRem)
