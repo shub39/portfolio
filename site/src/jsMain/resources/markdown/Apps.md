@@ -42,8 +42,7 @@ A simple ToDo List and Habit Tracker
 | ![3](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true) | ![4](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png?raw=true) |
 
 #### Links
-- [Github](https://github.com/shub39/Rush)
-- [F-Droid](https://f-droid.org/packages/com.shub39.rush/)
-- [IzzyOnDroid](https://apt.izzysoft.de/packages/com.shub39.rush/latest)
+- [Github](https://github.com/shub39/Grit)
+- [F-Droid](https://f-droid.org/packages/com.shub39.grit/)
 
 # 
