@@ -9,11 +9,9 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.icons.CloseIcon
 import com.varabyte.kobweb.silk.components.icons.HamburgerIcon
-import com.varabyte.kobweb.silk.components.navigation.Link
-import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
-import com.varabyte.kobweb.silk.components.navigation.UndecoratedLinkVariant
 import com.varabyte.kobweb.silk.components.overlay.Overlay
 import com.varabyte.kobweb.silk.components.overlay.OverlayVars
 import com.varabyte.kobweb.silk.style.CssStyle
@@ -25,7 +23,9 @@ import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
+import io.github.shub39.portfolio.components.widgets.ButtonColors
 import io.github.shub39.portfolio.components.widgets.IconButton
+import io.github.shub39.portfolio.components.widgets.LinkButton
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
 
@@ -35,19 +35,24 @@ val NavHeaderStyle = CssStyle.base {
 
 @Composable
 private fun NavLink(path: String, text: String) {
-    Link(
-        path,
-        text,
-        variant = UndecoratedLinkVariant.then(UncoloredLinkVariant),
-        modifier = Modifier.fontFamily("Poppins")
+    val ctx = rememberPageContext()
+    val colors = when (ctx.route.path) {
+        path -> ButtonColors.NormalButton
+        else -> ButtonColors.ClearButton
+    }
+
+    LinkButton(
+        path = path,
+        text = text,
+        colors = colors,
+        modifier = Modifier.fontFamily("JetBrains Mono")
     )
 }
 
 @Composable
 private fun MenuItems() {
-    NavLink("/", "Home")
-    NavLink("/apps", "Apps")
-    NavLink("/projects", "Projects")
+    NavLink("/apps", "/apps")
+    NavLink("/projects", "/projects")
 }
 
 @Composable
@@ -73,6 +78,7 @@ val SideMenuSlideInAnim = Keyframes {
         Modifier
     }
 }
+
 enum class SideMenuState {
     CLOSED,
     OPEN,
@@ -87,37 +93,41 @@ enum class SideMenuState {
 
 @Composable
 fun NavHeader() {
-    Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
+    val ctx = rememberPageContext()
 
+    Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
+        NavLink("/", "/shub39")
 
         Spacer()
 
-        Row(
-            Modifier
-            .gap(1.5.cssRem)
-            .displayIfAtLeast(Breakpoint.MD),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            MenuItems()
-        }
+        if (ctx.route.path != "/") {
+            Row(
+                Modifier
+                .gap(1.5.cssRem)
+                .displayIfAtLeast(Breakpoint.MD),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                MenuItems()
+            }
 
-        Row(
-            Modifier
-                .fontSize(1.5.cssRem)
-                .gap(1.cssRem)
-                .displayUntil(Breakpoint.MD),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            var menuState by remember { mutableStateOf(SideMenuState.CLOSED) }
+            Row(
+                Modifier
+                    .fontSize(1.5.cssRem)
+                    .gap(1.cssRem)
+                    .displayUntil(Breakpoint.MD),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                var menuState by remember { mutableStateOf(SideMenuState.CLOSED) }
 
-            HamburgerButton(onClick =  { menuState = SideMenuState.OPEN })
+                HamburgerButton(onClick =  { menuState = SideMenuState.OPEN })
 
-            if (menuState != SideMenuState.CLOSED) {
-                SideMenu(
-                    menuState,
-                    close = { menuState = menuState.close() },
-                    onAnimationEnd = { if (menuState == SideMenuState.CLOSING) menuState = SideMenuState.CLOSED }
-                )
+                if (menuState != SideMenuState.CLOSED) {
+                    SideMenu(
+                        menuState,
+                        close = { menuState = menuState.close() },
+                        onAnimationEnd = { if (menuState == SideMenuState.CLOSING) menuState = SideMenuState.CLOSED }
+                    )
+                }
             }
         }
     }

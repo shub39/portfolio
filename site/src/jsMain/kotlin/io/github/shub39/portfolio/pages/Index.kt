@@ -8,7 +8,9 @@ import io.github.shub39.portfolio.components.sections.*
 @Page
 @Composable
 fun HomePage() {
-    PageLayout("Home") {
+    PageLayout(
+        title = "Home"
+    ) {
         Intro()
         Contact()
     }

@@ -32,7 +32,6 @@ fun initSiteStyles(ctx: InitSilkContext) {
             .lineHeight(1.5)
     }
 
-    // Silk dividers only extend 90% by default; we want full width dividers in our site
     ctx.theme.modifyStyleBase(HorizontalDividerStyle) {
         Modifier.fillMaxWidth()
     }
@@ -42,7 +41,7 @@ val HeadlineTextStyle = CssStyle.base {
     Modifier
         .fontSize(3.cssRem)
         .textAlign(TextAlign.Start)
-        .lineHeight(1.2) //1.5x doesn't look as good on very large text
+        .lineHeight(1.2)
 }
 
 val SubheadlineTextStyle = CssStyle.base {
