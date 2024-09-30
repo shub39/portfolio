@@ -2,6 +2,7 @@ package io.github.shub39.portfolio.components.layouts
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.BorderCollapse
+import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.css.OverflowWrap
@@ -12,6 +13,7 @@ import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.toAttrs
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
+import io.github.shub39.portfolio.SitePalettes
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.LineStyle
@@ -21,14 +23,15 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 
 val MarkdownStyle = CssStyle {
-    base { Modifier.fillMaxSize() }
+    base { Modifier.fillMaxSize().minHeight(100.percent) }
 
     cssRule("h1") {
         Modifier
             .fontSize(3.cssRem)
-            .fontWeight(400)
+            .fontWeight(500)
             .margin(bottom = 2.5.cssRem)
             .lineHeight(1.2)
+            .fontStyle(FontStyle.Italic)
             .fontFamily("JetBrains Mono")
     }
 
@@ -48,7 +51,7 @@ val MarkdownStyle = CssStyle {
 
     cssRule("h4") {
         Modifier
-            .fontSize(1.2.cssRem)
+            .fontSize(2.cssRem)
             .fontWeight(FontWeight.Bolder)
             .margin(top = 1.cssRem, bottom = 0.5.cssRem)
     }
@@ -73,6 +76,11 @@ val MarkdownStyle = CssStyle {
             .fillMaxWidth()
     }
 
+    cssRule("hr") {
+        Modifier
+            .margin(topBottom = 5.cssRem)
+    }
+
     cssRule("pre > code") {
         Modifier
             .display(DisplayStyle.Block)
@@ -88,14 +96,14 @@ val MarkdownStyle = CssStyle {
     cssRule("table") {
         Modifier
             .borderCollapse(BorderCollapse.Collapse)
-            .margin(topBottom = 2.cssRem)
-            .border(1.px, LineStyle.Solid, colorMode.toPalette().color)
+            .margin(topBottom = 3.cssRem)
+            .border(3.px, LineStyle.Dashed, SitePalettes.dark.dark2)
     }
 
     cssRule("th, td") {
         Modifier
             .padding(0.5.cssRem)
-            .border(1.px, LineStyle.Solid, colorMode.toPalette().color)
+            .border(1.px, LineStyle.Dashed, SitePalettes.dark.dark2)
             .textAlign(TextAlign.Left)
     }
 

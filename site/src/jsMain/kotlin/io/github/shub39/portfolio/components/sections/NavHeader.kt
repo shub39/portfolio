@@ -26,8 +26,10 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import io.github.shub39.portfolio.components.widgets.ButtonColors
 import io.github.shub39.portfolio.components.widgets.IconButton
 import io.github.shub39.portfolio.components.widgets.LinkButton
+import io.github.shub39.portfolio.components.widgets.ThemedButton
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.dom.Text
 
 val NavHeaderStyle = CssStyle.base {
     Modifier.fillMaxWidth().padding(1.cssRem)
@@ -96,14 +98,14 @@ fun NavHeader() {
     val ctx = rememberPageContext()
 
     Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
-        NavLink("/", "/shub39")
+        NavLink("/", "/")
 
         Spacer()
 
         if (ctx.route.path != "/") {
             Row(
                 Modifier
-                .gap(1.5.cssRem)
+                .gap(0.5.cssRem)
                 .displayIfAtLeast(Breakpoint.MD),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -113,7 +115,7 @@ fun NavHeader() {
             Row(
                 Modifier
                     .fontSize(1.5.cssRem)
-                    .gap(1.cssRem)
+                    .gap(1.5.cssRem)
                     .displayUntil(Breakpoint.MD),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -129,6 +131,15 @@ fun NavHeader() {
                     )
                 }
             }
+        } else {
+
+            ThemedButton(
+                onClick = {},
+                text = "{shub39}",
+                colors = ButtonColors.ClearButton,
+                modifier = Modifier.fontFamily("JetBrains Mono")
+            )
+
         }
     }
 }
@@ -148,7 +159,7 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                     .align(Alignment.CenterEnd)
                     .padding(top = 1.cssRem, leftRight = 1.cssRem)
                     .gap(1.5.cssRem)
-                    .backgroundColor(ColorMode.current.toSitePalette().nearBackground)
+                    .backgroundColor(ColorMode.current.toSitePalette().dark4)
                     .animation(
                         SideMenuSlideInAnim.toAnimation(
                             duration = 200.ms,
@@ -163,7 +174,7 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                 horizontalAlignment = Alignment.End
             ) {
                 CloseButton(onClick = { close() })
-                Column(Modifier.padding(right = 0.75.cssRem).gap(1.5.cssRem).fontSize(1.4.cssRem), horizontalAlignment = Alignment.End) {
+                Column(Modifier.padding(right = 0.75.cssRem).gap(0.5.cssRem).fontSize(1.4.cssRem), horizontalAlignment = Alignment.Start) {
                     MenuItems()
                 }
             }
