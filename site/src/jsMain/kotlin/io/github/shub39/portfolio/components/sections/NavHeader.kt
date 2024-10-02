@@ -102,7 +102,7 @@ fun NavHeader() {
 
         Spacer()
 
-        if (ctx.route.path != "/") {
+        if (ctx.route.path != "/" && ctx.route.path != "/picker") {
             Row(
                 Modifier
                 .gap(0.5.cssRem)
@@ -134,9 +134,12 @@ fun NavHeader() {
         } else {
 
             ThemedButton(
-                onClick = {},
+                onClick = {ctx.router.navigateTo("/picker")},
                 text = "{shub39}",
-                colors = ButtonColors.ClearButton,
+                colors = when (ctx.route.path) {
+                    "/picker" -> ButtonColors.NormalButton
+                    else -> ButtonColors.ClearButton
+                },
                 modifier = Modifier.fontFamily("JetBrains Mono")
             )
 
@@ -159,7 +162,7 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                     .align(Alignment.CenterEnd)
                     .padding(top = 1.cssRem, leftRight = 1.cssRem)
                     .gap(1.5.cssRem)
-                    .backgroundColor(ColorMode.current.toSitePalette().dark4)
+                    .backgroundColor(ColorMode.current.toSitePalette().dark0Hard)
                     .animation(
                         SideMenuSlideInAnim.toAnimation(
                             duration = 200.ms,
@@ -168,7 +171,6 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                             fillMode = AnimationFillMode.Forwards
                         )
                     )
-                    .borderRadius(topLeft = 2.cssRem)
                     .onClick { it.stopPropagation() }
                     .onAnimationEnd { onAnimationEnd() },
                 horizontalAlignment = Alignment.End

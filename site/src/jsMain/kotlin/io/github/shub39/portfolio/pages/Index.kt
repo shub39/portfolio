@@ -15,3 +15,13 @@ fun HomePage() {
         Contact()
     }
 }
+
+@Page("picker")
+@Composable
+fun ColorPickerPage() {
+    PageLayout(
+        title = "Color Picker"
+    ) {
+        ColorPicker()
+    }
+}
