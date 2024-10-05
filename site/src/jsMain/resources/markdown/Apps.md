@@ -12,9 +12,8 @@ root: .components.layouts.MarkdownLayout("Apps")
 
 An app to **search, save, view** and **share** lyrics like **spotify!**
 
-| ![1](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true) | ![2](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png?raw=true) |
-|:-----------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------|
-| ![3](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true) | ![4](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png?raw=true) |
+| ![1](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true) | ![2](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png?raw=true)  | ![3](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true) | ![4](https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png?raw=true) |
+|:-----------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|
 
 #### Featured in
 - [itsfoss](https://news.itsfoss.com/rush/)
@@ -35,9 +34,8 @@ An app to **search, save, view** and **share** lyrics like **spotify!**
 
 **A simple ToDo List and Habit Tracker**
 
-| ![1](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true) | ![2](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png?raw=true) |
-|:-----------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------|
-| ![3](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true) | ![4](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png?raw=true) |
+| ![1](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true) | ![2](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png?raw=true) | ![3](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true) | ![4](https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png?raw=true) |
+|:-----------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|
 
 #### Links
 - [Github](https://github.com/shub39/Grit)

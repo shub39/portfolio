@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.BorderCollapse
 import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
+import com.varabyte.kobweb.compose.css.GridTemplate
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.css.OverflowWrap
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -18,6 +19,7 @@ import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
@@ -98,11 +100,12 @@ val MarkdownStyle = CssStyle {
             .borderCollapse(BorderCollapse.Collapse)
             .margin(topBottom = 3.cssRem)
             .border(3.px, LineStyle.Dashed, SitePalettes.dark.dark2)
+            .display(DisplayStyle.Grid)
     }
 
     cssRule("th, td") {
         Modifier
-            .padding(0.5.cssRem)
+            .padding(0.2.cssRem)
             .border(1.px, LineStyle.Dashed, SitePalettes.dark.dark2)
             .textAlign(TextAlign.Left)
     }
@@ -113,7 +116,6 @@ val MarkdownStyle = CssStyle {
             .maxHeight(100.percent)
     }
 
-
     cssRule("th") {
         Modifier
             .backgroundColor(colorMode.toSitePalette().nearBackground)
@@ -123,6 +125,7 @@ val MarkdownStyle = CssStyle {
     cssRule("tr:nth-child(even)") {
         Modifier.backgroundColor(colorMode.toSitePalette().nearBackground)
     }
+
 
 }
 
