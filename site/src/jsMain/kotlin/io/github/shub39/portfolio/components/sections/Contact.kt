@@ -54,7 +54,7 @@ fun Contact() {
 }
 
 @Composable
-fun SocialLinksRow() {
+private fun SocialLinksRow() {
     Row(
         modifier = Modifier
             .padding(0.1.cssRem)
@@ -78,7 +78,7 @@ fun SocialLinksRow() {
 }
 
 @Composable
-fun SocialLinkButton(url: String, icon: @Composable () -> Unit) {
+private fun SocialLinkButton(url: String, icon: @Composable () -> Unit) {
     LinkButton(
         url,
         Modifier.margin(topBottom = 4.px, leftRight = 4.px).color(

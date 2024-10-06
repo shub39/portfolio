@@ -3,15 +3,14 @@ package io.github.shub39.portfolio.pages
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.core.Page
 import io.github.shub39.portfolio.components.layouts.PageLayout
-import io.github.shub39.portfolio.components.sections.*
+import io.github.shub39.portfolio.components.sections.ColorPicker
 
-@Page
+@Page("picker")
 @Composable
-fun HomePage() {
+fun ColorPickerPage() {
     PageLayout(
-        title = "Home"
+        title = "Color Picker"
     ) {
-        Intro()
-        Contact()
+        ColorPicker()
     }
 }
