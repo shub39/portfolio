@@ -5,7 +5,7 @@ val MY_APPS = listOf<App>(
         name = "Rush",
         shortDesc = "Search, Save and Share lyrics like Spotify!",
         desc = "Rush is an Android App to get lyrics for your favorite tracks and share them through " +
-                "colorful cards, with features like synced lyrics and importing lyrics for local files " +
+                "colorful cards, with features like synced lyrics and importing lyrics for local files. " +
                 "it is a perfect tool for audiophiles and music nerds like myself.",
         github = "https://www.github.com/shub39/Rush",
         links = mapOf(
@@ -27,7 +27,7 @@ val MY_APPS = listOf<App>(
         ),
         achievements = mapOf(
             "Featured on itsfoss" to "https://news.itsfoss.com/rush/",
-            "Featured on top 10 apps fro september 2024 by Matt Rob" to "https://www.youtube.com/watch?v=5FjwPn9ciQc&t=1s&pp=ygUSdG9wIGFwcHMgc2VwdGVtYmVy"
+            "Featured on Youtube" to "https://www.youtube.com/watch?v=5FjwPn9ciQc&t=1s&pp=ygUSdG9wIGFwcHMgc2VwdGVtYmVy"
         )
     ),
 

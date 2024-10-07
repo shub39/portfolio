@@ -1,6 +1,8 @@
 package io.github.shub39.portfolio.components.widgets
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.Height
+import com.varabyte.kobweb.compose.css.MaxWidth
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -11,6 +13,7 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
+import io.github.shub39.portfolio.SitePalettes
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
 
@@ -24,16 +27,10 @@ fun AppScreenshots(
         horizontalArrangement = Arrangement.spacedBy(0.5.cssRem)
     ) {
         ss.forEach {
-            Image(
-                src = it,
+            ScreenShot(
+                img = it,
                 height = 600,
-                width = 280,
-                modifier = Modifier
-                    .border(
-                        width = 0.3.cssRem,
-                        style = LineStyle.Groove
-                    )
-                    .borderRadius(0.5.cssRem)
+                width = 280
             )
         }
     }
@@ -43,16 +40,10 @@ fun AppScreenshots(
         horizontalArrangement = Arrangement.spacedBy(0.5.cssRem)
     ) {
         ss.forEach {
-            Image(
-                src = it,
+            ScreenShot(
+                img = it,
                 height = 400,
-                width = 190,
-                modifier = Modifier
-                    .borderRadius(0.5.cssRem)
-                    .border(
-                        width = 0.3.cssRem,
-                        style = LineStyle.Groove
-                    )
+                width = 190
             )
         }
     }
@@ -66,21 +57,34 @@ fun AppScreenshots(
                 horizontalArrangement = Arrangement.spacedBy(0.5.cssRem)
             ) {
                 it.forEach {
-                    Image(
-                        src = it,
+                    ScreenShot(
+                        img = it,
                         height = 430,
-                        width = 200,
-                        modifier = Modifier
-                            .borderRadius(0.5.cssRem)
-                            .border(
-                                width = 0.3.cssRem,
-                                style = LineStyle.Groove
-                            )
+                        width = 200
                     )
                 }
             }
         }
     }
 
+}
 
+@Composable
+private fun ScreenShot(
+    img: String,
+    height: Int,
+    width: Int
+) {
+    Image(
+        src = img,
+        height = height,
+        width = width,
+        modifier = Modifier
+            .borderRadius(0.5.cssRem)
+            .border(
+                width = 0.3.cssRem,
+                style = LineStyle.Groove,
+                color = SitePalettes.dark.light0Soft
+            )
+    )
 }

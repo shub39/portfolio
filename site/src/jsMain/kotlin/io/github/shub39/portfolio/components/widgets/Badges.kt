@@ -1,7 +1,6 @@
 package io.github.shub39.portfolio.components.widgets
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.ScrollSnapAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -13,6 +12,7 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
+import io.github.shub39.portfolio.SitePalettes
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
 import kotlin.collections.chunked
@@ -22,7 +22,7 @@ import kotlin.collections.forEach
 fun Badges(
     bb: List<String>
 ) {
-    Column (
+    Column(
         modifier = Modifier.displayUntil(Breakpoint.XL),
         verticalArrangement = Arrangement.spacedBy(0.3.cssRem),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -32,15 +32,7 @@ fun Badges(
                 horizontalArrangement = Arrangement.spacedBy(0.3.cssRem)
             ) {
                 it.forEach {
-                    Image(
-                        src = it,
-                        modifier = Modifier
-                            .border(
-                                width = 0.1.cssRem,
-                                style = LineStyle.Groove
-                            )
-                            .borderRadius(0.5.cssRem)
-                    )
+                    Badge(it)
                 }
             }
         }
@@ -51,15 +43,23 @@ fun Badges(
         horizontalArrangement = Arrangement.spacedBy(0.3.cssRem)
     ) {
         bb.forEach {
-            Image(
-                src = it,
-                modifier = Modifier
-                    .border(
-                        width = 0.1.cssRem,
-                        style = LineStyle.Groove
-                    )
-                    .borderRadius(0.5.cssRem)
-            )
+            Badge(it)
         }
     }
+}
+
+@Composable
+private fun Badge(
+    img: String
+) {
+    Image(
+        src = img,
+        modifier = Modifier
+            .border(
+                width = 0.3.cssRem,
+                style = LineStyle.Groove,
+                color = SitePalettes.dark.light0Soft
+            )
+            .borderRadius(0.5.cssRem)
+    )
 }
