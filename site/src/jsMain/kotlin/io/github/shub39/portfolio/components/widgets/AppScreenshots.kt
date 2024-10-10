@@ -7,6 +7,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.border
 import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
@@ -23,18 +24,9 @@ fun AppScreenshots(
     ss: List<String>
 ) {
     Row(
-        modifier = Modifier.displayIfAtLeast(Breakpoint.XL),
-        horizontalArrangement = Arrangement.spacedBy(0.5.cssRem)
-    ) {
-        ss.forEach {
-            ScreenShot(
-                img = it,
-            )
-        }
-    }
-
-    Row(
-        modifier = Modifier.displayUntil(Breakpoint.XL).displayIfAtLeast(Breakpoint.MD),
+        modifier = Modifier
+            .displayIfAtLeast(Breakpoint.MD)
+            .width(100.percent),
         horizontalArrangement = Arrangement.spacedBy(0.5.cssRem)
     ) {
         ss.forEach {
@@ -45,12 +37,15 @@ fun AppScreenshots(
     }
 
     Column(
-        modifier = Modifier.displayUntil(Breakpoint.MD),
+        modifier = Modifier
+            .displayUntil(Breakpoint.MD)
+            .width(100.percent),
         verticalArrangement = Arrangement.spacedBy(0.5.cssRem)
     ) {
         ss.chunked(2).forEach {
             Row(
-                horizontalArrangement = Arrangement.spacedBy(0.5.cssRem)
+                horizontalArrangement = Arrangement.spacedBy(0.5.cssRem),
+                modifier = Modifier.width(100.percent)
             ) {
                 it.forEach {
                     ScreenShot(
@@ -70,7 +65,7 @@ private fun ScreenShot(
     Image(
         src = img,
         modifier = Modifier
-            .width(100.percent)
+            .fillMaxWidth()
             .borderRadius(0.3.cssRem)
             .border(
                 width = 0.3.cssRem,
