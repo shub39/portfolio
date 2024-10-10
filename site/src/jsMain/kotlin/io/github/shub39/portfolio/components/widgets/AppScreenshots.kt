@@ -1,14 +1,13 @@
 package io.github.shub39.portfolio.components.widgets
 
 import androidx.compose.runtime.Composable
-import com.varabyte.kobweb.compose.css.Height
-import com.varabyte.kobweb.compose.css.MaxWidth
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.border
 import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
+import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
@@ -16,6 +15,7 @@ import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import io.github.shub39.portfolio.SitePalettes
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.percent
 
 
 @Composable
@@ -29,8 +29,6 @@ fun AppScreenshots(
         ss.forEach {
             ScreenShot(
                 img = it,
-                height = 600,
-                width = 280
             )
         }
     }
@@ -42,8 +40,6 @@ fun AppScreenshots(
         ss.forEach {
             ScreenShot(
                 img = it,
-                height = 400,
-                width = 190
             )
         }
     }
@@ -59,8 +55,6 @@ fun AppScreenshots(
                 it.forEach {
                     ScreenShot(
                         img = it,
-                        height = 430,
-                        width = 200
                     )
                 }
             }
@@ -72,18 +66,15 @@ fun AppScreenshots(
 @Composable
 private fun ScreenShot(
     img: String,
-    height: Int,
-    width: Int
 ) {
     Image(
         src = img,
-        height = height,
-        width = width,
         modifier = Modifier
-            .borderRadius(0.5.cssRem)
+            .width(100.percent)
+            .borderRadius(0.3.cssRem)
             .border(
                 width = 0.3.cssRem,
-                style = LineStyle.Groove,
+                style = LineStyle.Double,
                 color = SitePalettes.dark.light0Soft
             )
     )
