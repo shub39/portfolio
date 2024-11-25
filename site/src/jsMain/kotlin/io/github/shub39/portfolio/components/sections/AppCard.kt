@@ -8,13 +8,14 @@ import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
-import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.fontStyle
 import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
 import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
 import com.varabyte.kobweb.silk.components.icons.fa.FaGlobe
@@ -23,6 +24,7 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import io.github.shub39.portfolio.components.widgets.AppScreenshots
 import io.github.shub39.portfolio.components.widgets.Badges
 import io.github.shub39.portfolio.components.widgets.LinkButton
+import io.github.shub39.portfolio.components.widgets.Spacer
 import io.github.shub39.portfolio.data.App
 import org.jetbrains.compose.web.css.cssRem
 
@@ -34,7 +36,6 @@ fun AppCard(
         modifier = Modifier
             .fillMaxWidth()
             .margin(topBottom = 2.cssRem),
-        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(0.5.cssRem)
     ) {
         SpanText(
@@ -42,7 +43,6 @@ fun AppCard(
             modifier = Modifier
                 .fontWeight(FontWeight.Bolder)
                 .fontSize(FontSize.XXLarge)
-                .textAlign(TextAlign.Center)
         )
 
         SpanText(
@@ -51,23 +51,28 @@ fun AppCard(
                 .fontWeight(FontWeight.Normal)
                 .fontSize(FontSize.XLarge)
                 .fontStyle(FontStyle.Italic)
-                .textAlign(TextAlign.Center)
-                .margin(bottom = 2.cssRem)
         )
+
+        Spacer(modifier = Modifier.padding(0.5.cssRem))
 
         AppScreenshots(app.images)
 
+        Spacer(modifier = Modifier.padding(0.2.cssRem))
+
         Badges(app.badges)
+
+        Spacer(modifier = Modifier.padding(0.5.cssRem))
 
         SpanText(
             text = app.desc,
             modifier = Modifier
-                .textAlign(TextAlign.Center)
-                .margin(top = 2.cssRem)
+                .fontSize(FontSize.Large)
+                .fontFamily("JetBrains Mono")
         )
 
+        Spacer(modifier = Modifier.padding(0.5.cssRem))
+
         Row(
-            modifier = Modifier.margin(top = 1.cssRem),
             horizontalArrangement = Arrangement.spacedBy(0.5.cssRem),
         ) {
             LinkButton(
@@ -88,13 +93,14 @@ fun AppCard(
         }
 
         if (app.achievements.isNotEmpty()) {
+            Spacer(modifier = Modifier.padding(0.5.cssRem))
+
             SpanText(
                 text = "Achievements",
                 modifier = Modifier
                     .fontWeight(FontWeight.Bold)
                     .fontSize(FontSize.XLarge)
                     .textAlign(TextAlign.Center)
-                    .margin(top = 1.cssRem)
             )
 
             app.achievements.forEach {
@@ -106,6 +112,5 @@ fun AppCard(
             }
         }
 
-        SpanText("---")
     }
 }

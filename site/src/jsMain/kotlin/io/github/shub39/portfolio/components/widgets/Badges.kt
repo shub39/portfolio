@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
-import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
@@ -20,8 +19,7 @@ fun Badges(
 ) {
     Column(
         modifier = Modifier.displayUntil(Breakpoint.XL),
-        verticalArrangement = Arrangement.spacedBy(0.3.cssRem),
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.spacedBy(0.3.cssRem)
     ) {
         bb.chunked(2).forEach {
             Row(

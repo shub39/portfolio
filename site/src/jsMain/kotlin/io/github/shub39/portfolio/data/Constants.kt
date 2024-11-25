@@ -66,7 +66,7 @@ val MY_APPS = listOf<App>(
         shortDesc = "Multiplatform app to browse info on the Rick and Morty universe",
         desc = "Plumbus is a Compose Multiplatform app targeting android and desktop that " +
                 "lets you browse information on characters, episodes and locations from the Rick and Morty" +
-                "Universe",
+                " Universe",
         badges = listOf(
             "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",
             "https://ziadoua.github.io/m3-Markdown-Badges/badges/Windows/windows2.svg",

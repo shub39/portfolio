@@ -12,6 +12,5 @@ fun HomePage() {
         title = "Home"
     ) {
         Intro()
-        Contact()
     }
 }
