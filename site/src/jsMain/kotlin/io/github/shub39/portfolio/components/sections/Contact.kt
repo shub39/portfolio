@@ -66,9 +66,6 @@ private fun SocialLinksRow() {
             "https://www.github.com/shub39"
         ) { FaGithub(size = IconSize.XXL) }
         SocialLinkButton(
-            "https://www.discordapp.com/users/1125393715612094514"
-        ) { FaDiscord(size = IconSize.XXL) }
-        SocialLinkButton(
             "https://t.me/shub39"
         ) { FaTelegram(size = IconSize.XXL) }
         SocialLinkButton(

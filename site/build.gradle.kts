@@ -1,10 +1,9 @@
-import com.varabyte.kobweb.gradle.application.extensions.AppBlock.LegacyRouteRedirectStrategy
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 import kotlinx.html.link
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
-    alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kobweb.application)
     alias(libs.plugins.kobwebx.markdown)
 }
@@ -27,7 +26,7 @@ kobweb {
                     rel = "stylesheet"
                 )
         }
-        legacyRouteRedirectStrategy.set(LegacyRouteRedirectStrategy.DISALLOW)
+
     }
 }
 
@@ -36,11 +35,11 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
+            implementation(libs.compose.runtime)
         }
 
         jsMain.dependencies {
-            implementation(compose.html.core)
+            implementation(libs.compose.html.core)
             implementation(libs.kobweb.core)
             implementation(libs.kobweb.silk)
             implementation(libs.silk.icons.fa)
