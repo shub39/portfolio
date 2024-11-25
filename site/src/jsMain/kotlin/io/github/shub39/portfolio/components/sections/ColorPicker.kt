@@ -130,7 +130,6 @@ fun ColorPicker() {
 
 private val gruvboxColors = listOf(
     listOf(
-        Color.rgb(0x66, 0x5C, 0x54),   // dark1
         Color.rgb(0x50, 0x49, 0x45),  // dark0Soft
         Color.rgb(0x3C, 0x38, 0x36),  // dark0
         Color.rgb(0x28, 0x28, 0x28),  // dark0Hard
@@ -141,7 +140,6 @@ private val gruvboxColors = listOf(
         Color.rgb(0xA8, 0x99, 0x84),  // dark4
     ),
     listOf(
-        Color.rgb(0xEB, 0xDB, 0xB2),  // light0Hard
         Color.rgb(0xFB, 0xF1, 0xC7),  // light0
         Color.rgb(0xF2, 0xE5, 0xBC),  // light0Soft
         Color.rgb(0xD5, 0xC4, 0xA1),  // light1

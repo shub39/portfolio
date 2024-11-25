@@ -17,11 +17,11 @@ val MY_APPS = listOf<App>(
             "izzyOnDroid" to "https://apt.izzysoft.de/packages/com.shub39.rush/latest"
         ),
         badges = listOf(
-            "https://img.shields.io/github/last-commit/shub39/Grit?&style=for-the-badge&logo=github&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/github/stars/shub39/Rush?style=for-the-badge&logo=andela&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/github/v/release/Shub39/Rush?include_prereleases&logo=github&style=for-the-badge&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/f-droid/v/com.shub39.rush?logo=F-Droid&style=for-the-badge&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.shub39.rush&style=for-the-badge&color=$color&logoColor=$logoColor&labelColor=$labelColor"
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/AndroidStudio/androidstudio3.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Kotlin/kotlin1.svg",
+            "https://m3-markdown-badges.vercel.app/stars/1/3/shub39/Rush",
+            "https://m3-markdown-badges.vercel.app/issues/1/2/shub39/Rush"
         ),
         images = listOf(
             "https://github.com/shub39/Rush/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true",
@@ -46,17 +46,42 @@ val MY_APPS = listOf<App>(
             "izzyOnDroid" to "https://apt.izzysoft.de/packages/com.shub39.grit/latest"
         ),
         badges = listOf(
-            "https://img.shields.io/github/last-commit/shub39/Grit?&style=for-the-badge&logo=github&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/github/stars/shub39/Grit?style=for-the-badge&logo=andela&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/github/v/release/Shub39/Grit?include_prereleases&logo=github&style=for-the-badge&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/f-droid/v/com.shub39.grit?logo=F-Droid&style=for-the-badge&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.shub39.grit&style=for-the-badge&color=$color&logoColor=$logoColor&labelColor=$labelColor"
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/AndroidStudio/androidstudio3.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Kotlin/kotlin1.svg",
+            "https://m3-markdown-badges.vercel.app/stars/1/3/shub39/Grit",
+            "https://m3-markdown-badges.vercel.app/issues/1/2/shub39/Grit"
         ),
         images = listOf(
             "https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true",
             "https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png?raw=true",
             "https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true",
             "https://github.com/shub39/Grit/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/6.png?raw=true"
+        ),
+        achievements = mapOf()
+    ),
+
+    App(
+        name = "Plumbus",
+        shortDesc = "Multiplatform app to browse info on the Rick and Morty universe",
+        desc = "Plumbus is a Compose Multiplatform app targeting android and desktop that " +
+                "lets you browse information on characters, episodes and locations from the Rick and Morty" +
+                " Universe",
+        badges = listOf(
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Windows/windows2.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/macOS/macos3.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Linux/linux2.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/AndroidStudio/androidstudio2.svg",
+            "https://ziadoua.github.io/m3-Markdown-Badges/badges/Kotlin/kotlin1.svg"
+        ),
+        github = "https://github.com/shub39/Plumbus",
+        links = mapOf(),
+        images = listOf(
+            "https://github.com/shub39/Plumbus/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png?raw=true",
+            "https://github.com/shub39/Plumbus/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png?raw=true",
+            "https://github.com/shub39/Plumbus/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png?raw=true",
+            "https://github.com/shub39/Plumbus/blob/master/fastlane/metadata/android/en-US/images/phoneScreenshots/6.png?raw=true"
         ),
         achievements = mapOf()
     )
