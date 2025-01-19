@@ -13,8 +13,9 @@ val MY_APPS = listOf<App>(
                 "it is a perfect tool for audiophiles and music nerds like myself.",
         github = "https://www.github.com/shub39/Rush",
         links = mapOf(
-            "fdroid" to "https://f-droid.org/packages/com.shub39.rush/",
-            "izzyOnDroid" to "https://apt.izzysoft.de/packages/com.shub39.rush/latest"
+            AppSources.PLAYSTORE.name to "https://play.google.com/store/apps/details?id=com.shub39.rush.play",
+            AppSources.FDROID.name to "https://f-droid.org/packages/com.shub39.rush/",
+            AppSources.IZZYONDROID.name to "https://apt.izzysoft.de/packages/com.shub39.rush/latest"
         ),
         badges = listOf(
             "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",
@@ -42,8 +43,8 @@ val MY_APPS = listOf<App>(
                 "visualise your progress through maps.",
         github = "https://www.github.com/shub39/Grit",
         links = mapOf(
-            "fdroid" to "https://f-droid.org/packages/com.shub39.grit/",
-            "izzyOnDroid" to "https://apt.izzysoft.de/packages/com.shub39.grit/latest"
+            AppSources.FDROID.name to "https://f-droid.org/packages/com.shub39.grit/",
+            AppSources.IZZYONDROID.name to "https://apt.izzysoft.de/packages/com.shub39.grit/latest"
         ),
         badges = listOf(
             "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",

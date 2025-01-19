@@ -78,7 +78,7 @@ fun ProjectCard(
             path = project.github
         ) {
             FaGithub(size = IconSize.XL)
-            SpanText("Github")
+            SpanText("GITHUB")
         }
     }
 }

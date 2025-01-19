@@ -9,23 +9,15 @@ import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.fontFamily
-import com.varabyte.kobweb.compose.ui.modifiers.fontSize
-import com.varabyte.kobweb.compose.ui.modifiers.fontStyle
-import com.varabyte.kobweb.compose.ui.modifiers.fontWeight
-import com.varabyte.kobweb.compose.ui.modifiers.margin
-import com.varabyte.kobweb.compose.ui.modifiers.padding
-import com.varabyte.kobweb.compose.ui.modifiers.textAlign
-import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
-import com.varabyte.kobweb.silk.components.icons.fa.FaGlobe
-import com.varabyte.kobweb.silk.components.icons.fa.IconSize
+import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.silk.components.icons.fa.*
 import com.varabyte.kobweb.silk.components.text.SpanText
 import io.github.shub39.portfolio.components.widgets.AppScreenshots
 import io.github.shub39.portfolio.components.widgets.Badges
 import io.github.shub39.portfolio.components.widgets.LinkButton
 import io.github.shub39.portfolio.components.widgets.Spacer
 import io.github.shub39.portfolio.data.App
+import io.github.shub39.portfolio.data.AppSources
 import org.jetbrains.compose.web.css.cssRem
 
 @Composable
@@ -79,14 +71,19 @@ fun AppCard(
                 path = app.github
             ) {
                 FaGithub(size = IconSize.XL)
-                SpanText("Github")
+                SpanText("GITHUB")
             }
 
             app.links.forEach {
                 LinkButton(
                     path = it.value
                 ) {
-                    FaGlobe()
+                    when(it.key) {
+                        AppSources.PLAYSTORE.name -> FaGooglePlay()
+                        AppSources.FDROID.name -> FaStore()
+                        AppSources.IZZYONDROID.name -> FaShop()
+                        else -> FaGlobe()
+                    }
                     SpanText(it.key)
                 }
             }
@@ -107,6 +104,7 @@ fun AppCard(
                 LinkButton(
                     path = it.value
                 ) {
+                    FaGlobe()
                     SpanText(it.key)
                 }
             }

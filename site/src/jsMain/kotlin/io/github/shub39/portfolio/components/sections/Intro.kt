@@ -94,7 +94,7 @@ fun Intro() {
                 }
 
                 LinkButton(
-                    path = "https://github.com/shub39/portfolio/blob/main/site/src/jsMain/resources/public/Resume.pdf",
+                    path = "https://github.com/shub39/portfolio/blob/main/site/src/jsMain/resources/public/Resume.pdf?raw=true",
                     colors = ButtonColors.OrangeButton,
                     modifier = Modifier.fontFamily("Poppins"),
                 ) {
