@@ -29,10 +29,9 @@ import io.github.shub39.portfolio.components.widgets.LinkButton
 import io.github.shub39.portfolio.components.widgets.ThemedButton
 import io.github.shub39.portfolio.toSitePalette
 import org.jetbrains.compose.web.css.*
-import org.jetbrains.compose.web.dom.Text
 
 val NavHeaderStyle = CssStyle.base {
-    Modifier.fillMaxWidth().padding(1.cssRem)
+    Modifier.fillMaxWidth().widthIn(max = 1200.px).padding(1.cssRem)
 }
 
 @Composable
@@ -135,7 +134,7 @@ fun NavHeader() {
 
             ThemedButton(
                 onClick = {ctx.router.navigateTo("/picker")},
-                text = "{shub39}",
+                text = "{ColorPicker}",
                 colors = when (ctx.route.path) {
                     "/picker" -> ButtonColors.NormalButton
                     else -> ButtonColors.ClearButton

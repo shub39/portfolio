@@ -1,9 +1,5 @@
 package io.github.shub39.portfolio.data
 
-const val color = "076678"
-const val logoColor = "D9E0EE"
-const val labelColor = "504945"
-
 val MY_APPS = listOf<App>(
     App(
         name = "Rush",
@@ -15,7 +11,7 @@ val MY_APPS = listOf<App>(
         links = mapOf(
             AppSources.PLAYSTORE.name to "https://play.google.com/store/apps/details?id=com.shub39.rush.play",
             AppSources.FDROID.name to "https://f-droid.org/packages/com.shub39.rush/",
-            AppSources.IZZYONDROID.name to "https://apt.izzysoft.de/packages/com.shub39.rush/latest"
+            AppSources.IZZY.name to "https://apt.izzysoft.de/packages/com.shub39.rush/latest"
         ),
         badges = listOf(
             "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",
@@ -44,7 +40,7 @@ val MY_APPS = listOf<App>(
         github = "https://www.github.com/shub39/Grit",
         links = mapOf(
             AppSources.FDROID.name to "https://f-droid.org/packages/com.shub39.grit/",
-            AppSources.IZZYONDROID.name to "https://apt.izzysoft.de/packages/com.shub39.grit/latest"
+            AppSources.IZZY.name to "https://apt.izzysoft.de/packages/com.shub39.grit/latest"
         ),
         badges = listOf(
             "https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android2.svg",
@@ -97,9 +93,7 @@ val MY_PROJECTS = listOf<Project>(
                 "showcasing my work and some basic utilities like color pickers " +
                 "that I find myself using often.",
         images = listOf(),
-        badges = listOf(
-            "https://img.shields.io/github/last-commit/shub39/portfolio?&style=for-the-badge&logo=github&color=$color&logoColor=$logoColor&labelColor=$labelColor"
-        ),
+        badges = listOf(),
         github = "https://github.com/shub39/portfolio"
     ),
 
@@ -128,8 +122,7 @@ val MY_PROJECTS = listOf<Project>(
             "https://github.com/shub39/dotfiles/blob/main/screenshots/4.png?raw=true"
         ),
         badges = listOf(
-            "https://img.shields.io/github/last-commit/shub39/dotfiles?&style=for-the-badge&logo=github&color=$color&logoColor=$logoColor&labelColor=$labelColor",
-            "https://img.shields.io/github/stars/shub39/dotfiles?style=for-the-badge&logo=andela&color=$color&logoColor=$logoColor&labelColor=$labelColor",
+            "https://m3-markdown-badges.vercel.app/stars/1/3/shub39/dotfiles",
         ),
         github = "https://github.com/shub39/dotfiles"
     )

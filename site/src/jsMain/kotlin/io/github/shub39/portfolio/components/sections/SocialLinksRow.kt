@@ -15,7 +15,6 @@ import org.jetbrains.compose.web.css.px
 fun SocialLinksRow() {
     Row(
         modifier = Modifier
-            .fillMaxWidth()
             .borderRadius(1.cssRem)
     ) {
         SocialLinkButton(
