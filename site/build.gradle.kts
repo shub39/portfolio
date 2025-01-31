@@ -36,7 +36,6 @@ kobweb {
         sourceSets {
             commonMain.dependencies {
                 implementation(libs.compose.runtime)
-//                implementation("com.materialkolor:material-kolor:2.0.1")
             }
 
             jsMain.dependencies {
