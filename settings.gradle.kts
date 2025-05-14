@@ -28,4 +28,3 @@ gradle.settingsEvaluated {
 rootProject.name = "portfolio"
 
 include(":site")
-
