@@ -16,20 +16,23 @@ import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 import com.shub39.portfolio.toSitePalette
+import com.varabyte.kobweb.compose.css.ObjectFit
+import org.jetbrains.compose.web.css.Color
+import org.jetbrains.compose.web.css.percent
 
 val MarkdownStyle = CssStyle {
     base {
         Modifier
             .fillMaxSize()
-            .padding(top = 8.cssRem)
+            .padding(topBottom = 8.cssRem)
     }
 
     cssRule("h1") {
         Modifier
             .fontSize(3.cssRem)
             .fontWeight(400)
-            .margin(bottom = 2.5.cssRem)
-            .lineHeight(1.2) //1.5x doesn't look as good on very large text
+            .margin(bottom = 0.5.cssRem)
+            .lineHeight(1.2)
     }
 
     cssRule("h2") {
@@ -72,6 +75,7 @@ val MarkdownStyle = CssStyle {
             .margin(top = 0.5.cssRem, bottom = 2.cssRem)
             .fillMaxWidth()
     }
+
     cssRule("pre > code") {
         Modifier
             .display(DisplayStyle.Block)
@@ -82,6 +86,17 @@ val MarkdownStyle = CssStyle {
             .padding(0.5.cssRem)
             .fontSize(1.cssRem)
             .overflow { x(Overflow.Auto) }
+    }
+
+    cssRule("a") {
+        Modifier.color(Color.currentColor)
+    }
+
+    cssRule("table img") {
+        Modifier
+            .maxWidth(100.percent)
+            .objectFit(ObjectFit.Contain)
+            .display(DisplayStyle.Block)
     }
 }
 

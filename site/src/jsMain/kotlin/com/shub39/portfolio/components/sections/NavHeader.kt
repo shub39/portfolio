@@ -15,9 +15,6 @@ import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.icons.MoonIcon
 import com.varabyte.kobweb.silk.components.icons.SunIcon
-import com.varabyte.kobweb.silk.components.navigation.Link
-import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
-import com.varabyte.kobweb.silk.components.navigation.UndecoratedLinkVariant
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.animation.Keyframes
 import com.varabyte.kobweb.silk.style.base
@@ -53,13 +50,13 @@ private fun NavLink(path: String, text: String) {
 private fun MenuItems() {
     NavLink("/", "/")
     NavLink("/apps", "/apps")
-    NavLink("/projects", "/projects")
+//    NavLink("/projects", "/projects")
 }
 
 @Composable
 private fun ColorModeButton() {
     var colorMode by ColorMode.currentState
-    IconButton(onClick = { colorMode = colorMode.opposite },) {
+    IconButton(onClick = { colorMode = colorMode.opposite }) {
         if (colorMode.isLight) MoonIcon() else SunIcon()
     }
 }
