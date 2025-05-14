@@ -18,7 +18,11 @@ import org.jetbrains.compose.web.dom.Div
 import com.shub39.portfolio.toSitePalette
 
 val MarkdownStyle = CssStyle {
-    base { Modifier.fillMaxSize() }
+    base {
+        Modifier
+            .fillMaxSize()
+            .padding(top = 8.cssRem)
+    }
 
     cssRule("h1") {
         Modifier
