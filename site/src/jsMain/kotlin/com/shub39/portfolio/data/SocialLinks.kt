@@ -14,22 +14,22 @@ data class SocialLink(
 
 val SOCIAL_LINKS = listOf(
     SocialLink(
-        name = "Github",
+        name = "Github.md",
         link = "https://github.com/shub39",
         icon = { FaGithub() }
     ),
     SocialLink(
-        name = "LinkedIn",
+        name = "LinkedIn.md",
         link = "https://www.linkedin.com/in/shub39/",
         icon = { FaLinkedin() }
     ),
     SocialLink(
-        name = "Email",
+        name = "Email.txt",
         link = "mailto:cptnshubham39@gmail.com",
         icon = { FaEnvelope() }
     ),
     SocialLink(
-        name = "Twitter",
+        name = "Twitter.md",
         link = "https://x.com/_shub39",
         icon = { FaXTwitter() }
     )

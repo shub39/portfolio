@@ -28,9 +28,9 @@ val NavHeaderStyle = CssStyle {
         Modifier
             .fillMaxWidth()
             .padding(topBottom = 1.cssRem, leftRight = 2.cssRem)
-            .backdropFilter(blur(4.px))
+            .backdropFilter(blur(12.px))
             .styleModifier {
-                property("-webkit-backdrop-filter", "blur( 4px )")
+                property("-webkit-backdrop-filter", "blur( 12px )")
             }
     }
 
