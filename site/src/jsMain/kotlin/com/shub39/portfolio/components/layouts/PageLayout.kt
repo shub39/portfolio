@@ -2,7 +2,7 @@ package com.shub39.portfolio.components.layouts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import com.shub39.portfolio.components.sections.NavHeader
+import com.shub39.portfolio.components.widgets.NavHeader
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.ColumnScope
@@ -20,7 +20,7 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.dom.Div
 
 val PageContentStyle = CssStyle {
-    base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem) }
+    base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem, topBottom = 8.cssRem) }
     Breakpoint.MD { Modifier.maxWidth(60.cssRem) }
 }
 
@@ -31,7 +31,7 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
     }
 
     Box(
-        Modifier
+        modifier = Modifier
             .fontFamily("JetBrains Mono")
             .fillMaxWidth()
             .minHeight(100.percent)
@@ -39,8 +39,8 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
         contentAlignment = Alignment.Center
     ) {
         Column(
-            Modifier.fillMaxSize().gridRow(1),
-            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize().gridRow(1),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             NavHeader(
                 modifier = Modifier.position(Position.Fixed)

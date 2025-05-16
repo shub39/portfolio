@@ -10,10 +10,14 @@ import com.shub39.portfolio.ButtonVariant
 import com.shub39.portfolio.UncoloredButtonVariant
 
 @Composable
-fun IconButton(onClick: () -> Unit, content: @Composable () -> Unit) {
+fun IconButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit
+) {
     Button(
         onClick = { onClick() },
-        Modifier.setVariable(ButtonVars.FontSize, 1.em), // Make button icon size relative to parent container font size
+        modifier = modifier.setVariable(ButtonVars.FontSize, 1.em),
         variant = ButtonVariant.then(UncoloredButtonVariant)
     ) {
         content()
