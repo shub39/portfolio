@@ -42,6 +42,7 @@ val APPS = listOf(
         shortDescription = "Browse Bhagavad Gita",
         github = "https://github.com/shub39/Dharmik",
         stars = 40,
+        playstore = "https://play.google.com/store/apps/details?id=com.shub39.dharmik.online",
         skills = listOf(
             Skill.KotlinSkill,
             Skill.KotlinMultiplatform,
